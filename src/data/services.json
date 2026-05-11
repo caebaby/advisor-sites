@@ -1,0 +1,44 @@
+{
+  "services": [
+    {
+      "id": "financial-planning",
+      "title": "Financial Planning",
+      "icon": "chart-bar",
+      "description": "A comprehensive financial plan that accounts for where you are today and maps a clear, achievable path to where you want to be. We review every dimension of your financial life — income, expenses, insurance, taxes, and estate — and build a living document that evolves as your life does.",
+      "ctaLabel": "Learn More",
+      "ctaUrl": "/services/#financial-planning"
+    },
+    {
+      "id": "investment-management",
+      "title": "Investment Management",
+      "icon": "trending-up",
+      "description": "Evidence-based portfolio construction aligned with your goals, timeline, and risk tolerance. No commission-driven product recommendations — just a disciplined, low-cost investment strategy built around your specific situation.",
+      "ctaLabel": "Learn More",
+      "ctaUrl": "/services/#investment-management"
+    },
+    {
+      "id": "tax-strategy",
+      "title": "Tax Strategy",
+      "icon": "document-text",
+      "description": "Proactive tax planning — not just tax filing. We identify opportunities to reduce your lifetime tax burden through Roth conversions, tax-loss harvesting, entity structure optimization, and coordination with your CPA.",
+      "ctaLabel": "Learn More",
+      "ctaUrl": "/services/#tax-strategy"
+    },
+    {
+      "id": "estate-planning",
+      "title": "Estate Planning",
+      "icon": "shield-check",
+      "description": "Ensure your assets go where you intend and your family is protected. We work alongside estate attorneys to review your documents, beneficiary designations, titling, and trust structures.",
+      "ctaLabel": "Learn More",
+      "ctaUrl": "/services/#estate-planning"
+    },
+    {
+      "id": "insurance-review",
+      "title": "Insurance Review",
+      "icon": "umbrella",
+      "description": "An independent, unbiased review of your life, disability, long-term care, and liability coverage. We identify over- or under-insurance, recommend appropriate coverage levels — without selling you anything.",
+      "ctaLabel": "Learn More",
+      "ctaUrl": "/services/#insurance-review"
+    }
+  ]
+}

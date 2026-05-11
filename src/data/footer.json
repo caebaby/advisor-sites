@@ -1,38 +1,38 @@
 {
-  "logoSource": "/src/assets/images/component-docs/acs-logo.svg",
-  "logoAlternateSource": "/src/assets/images/component-docs/acs-logo-dark.svg",
-  "logoAlt": "Astro Component Starter",
+  "logoSource": "/favicon.svg",
+  "logoAlternateSource": "/favicon.svg",
+  "logoAlt": "Harmon Wealth Advisors",
   "links": [
     {
-      "name": "Home",
-      "path": "/"
+      "name": "About",
+      "path": "/about/"
     },
     {
-      "name": "Why",
-      "path": "/why/"
+      "name": "Services",
+      "path": "/services/"
     },
     {
-      "name": "Components",
-      "path": "/component-docs/"
+      "name": "Resources",
+      "path": "/resources/"
     },
     {
       "name": "Blog",
       "path": "/blog/"
+    },
+    {
+      "name": "Contact",
+      "path": "mailto:james@harmonwealth.com"
     }
   ],
   "socials": [
     {
-      "icon": "social/github",
-      "link": "https://github.com"
+      "icon": "social/linkedin",
+      "link": "https://linkedin.com/in/placeholder"
     },
     {
       "icon": "social/x",
-      "link": "https://x.com"
-    },
-    {
-      "icon": "social/linkedin",
-      "link": "https://linkedin.com"
+      "link": "https://twitter.com/placeholder"
     }
   ],
-  "footerText": "© 2026 All rights reserved."
+  "footerText": "© 2026 Harmon Wealth Advisors. All rights reserved. Fee-only fiduciary financial planning."
 }

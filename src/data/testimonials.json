@@ -1,0 +1,16 @@
+{
+  "testimonials": [
+    {
+      "quote": "Working with James completely changed how I think about our finances. For the first time, I feel like we have a real plan — not just a portfolio. He explained everything in plain English and never made me feel rushed.",
+      "name": "Dr. Sarah M.",
+      "title": "Physician",
+      "location": "Austin, TX"
+    },
+    {
+      "quote": "I came to James after my company's IPO with a lot of complexity and a lot of anxiety. He helped me build a diversified plan, navigate the tax implications, and actually sleep at night. I can't recommend him highly enough.",
+      "name": "Michael T.",
+      "title": "Tech Executive",
+      "location": "Austin, TX"
+    }
+  ]
+}

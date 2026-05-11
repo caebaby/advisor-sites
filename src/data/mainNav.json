@@ -1,8 +1,8 @@
 {
-  "logoSource": "/src/assets/images/component-docs/acs-logo.svg",
-  "logoAlternateSource": "/src/assets/images/component-docs/acs-logo-dark.svg",
-  "logoAlt": "Astro Component Starter",
-  "themeToggle": true,
+  "logoSource": "/favicon.svg",
+  "logoAlternateSource": "/favicon.svg",
+  "logoAlt": "Harmon Wealth Advisors",
+  "themeToggle": false,
   "navData": [
     {
       "name": "Home",
@@ -10,13 +10,18 @@
       "children": []
     },
     {
-      "name": "Why",
-      "path": "/why/",
+      "name": "About",
+      "path": "/about/",
       "children": []
     },
     {
-      "name": "Components",
-      "path": "/component-docs/",
+      "name": "Services",
+      "path": "/services/",
+      "children": []
+    },
+    {
+      "name": "Resources",
+      "path": "/resources/",
       "children": []
     },
     {
@@ -28,13 +33,13 @@
   "buttonSections": [
     {
       "_component": "building-blocks/core-elements/button",
-      "text": "Search",
-      "hideText": true,
-      "link": "/search/",
-      "iconName": "magnifying-glass",
+      "text": "Schedule a Call",
+      "hideText": false,
+      "link": "https://calendly.com/placeholder",
+      "iconName": "",
       "iconPosition": "before",
-      "variant": "ghost",
-      "size": "lg"
+      "variant": "primary",
+      "size": "md"
     }
   ]
 }

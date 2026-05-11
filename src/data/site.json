@@ -1,0 +1,21 @@
+{
+  "firmName": "Harmon Wealth Advisors",
+  "advisorName": "James R. Harmon",
+  "advisorCredentials": "CFP®, CPWA®",
+  "advisorTitle": "Founder & Lead Advisor",
+  "tagline": "Clarity. Confidence. A Plan Built Around You.",
+  "phone": "(512) 555-0174",
+  "email": "james@harmonwealth.com",
+  "address": "400 W. 15th Street, Suite 1200, Austin, TX 78701",
+  "schedulingUrl": "https://calendly.com/placeholder",
+  "social": {
+    "linkedin": "https://linkedin.com/in/placeholder",
+    "twitter": "https://twitter.com/placeholder"
+  },
+  "complianceDisclaimer": "Client testimonials may not be representative of all clients' experiences. Past performance is not indicative of future results. James R. Harmon is a registered investment adviser.",
+  "footerDisclaimer": "Harmon Wealth Advisors is a registered investment adviser in the State of Texas. This website is for informational purposes only and does not constitute investment advice.",
+  "bottomCtaHeading": "Ready to Build a Plan That Works for You?",
+  "bottomCtaBody": "Schedule a complimentary 30-minute consultation and let's talk about where you are and where you want to go.",
+  "bottomCtaLabel": "Schedule a Consultation",
+  "bottomCtaUrl": "https://calendly.com/placeholder"
+}
