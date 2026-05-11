@@ -105,9 +105,27 @@ const blogCollection = defineCollection({
   schema: blogPostSchema,
 });
 
+const landingSchema = z.object({
+  title: z.string(),
+  headline: z.string(),
+  subheadline: z.string(),
+  heroImage: z.string(),
+  heroImageAlt: z.string().default(""),
+  ctaHeading: z.string(),
+  bullets: z.array(z.object({ text: z.string() })),
+  ctaLabel: z.string(),
+  ctaUrl: z.string(),
+});
+
+const landingCollection = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/landing" }),
+  schema: landingSchema,
+});
+
 export const collections = {
   pages: pagesCollection,
   "docs-pages": docsPagesCollection,
   "docs-components": docsComponentsCollection,
   blog: blogCollection,
+  landing: landingCollection,
 };
