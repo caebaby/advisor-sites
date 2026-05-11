@@ -101,6 +101,30 @@ collections_config:
         undo: true
         redo: true
         removeformat: true
+  landing:
+    path: src/content/landing
+    glob:
+      - "**/*.md"
+    url: /landing/[full_slug]/
+    icon: page
+    add_options:
+      - name: Add Landing Page
+        schema: default
+        icon: page
+    _inputs:
+      heroImage:
+        type: image
+        options:
+          paths:
+            uploads: src/assets/images
+      ctaUrl:
+        type: url
+      bullets:
+        type: array
+      bullets[*]:
+        type: object
+        options:
+          structures: _structures.landing_bullet
   data:
     path: src/data
     glob:
@@ -158,6 +182,7 @@ collection_groups:
     collections:
       - pages
       - blog
+      - landing
   - heading: Data
     collections:
       - data
@@ -857,6 +882,13 @@ _select_data:
       name: X Circle
     - id: x-mark
       name: X Mark
+
+_structures:
+  landing_bullet:
+    values:
+      - value:
+          text: ""
+        label: Add Bullet Point
 
 _structures_from_glob:
   - /.cloudcannon/structures/*.cloudcannon.structures.yml
