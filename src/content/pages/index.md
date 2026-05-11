@@ -10,7 +10,7 @@ pageSections:
     ctaUrl: "https://calendly.com/placeholder"
     secondaryLabel: "See How We Help →"
     secondaryUrl: "/services/"
-    heroImage: "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=1200&q=80"
+    heroImage: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&q=80"
     heroImageAlt: "Financial advisor in a modern Austin office"
   - _component: page-sections/advisor/who-we-help
     heading: "Who We Work With"
