@@ -1,0 +1,76 @@
+---
+interface Step {
+  title: string;
+  description: string;
+}
+
+interface Props {
+  heading?: string;
+  steps?: Step[];
+}
+
+const defaultSteps: Step[] = [
+  {
+    title: "Discovery",
+    description:
+      "We spend 60 minutes understanding your full financial picture — goals, gaps, concerns, and what you've tried before.",
+  },
+  {
+    title: "Your Plan",
+    description:
+      "We build a comprehensive, written financial plan that covers every dimension of your financial life.",
+  },
+  {
+    title: "Implementation",
+    description:
+      "We execute on the plan together — investments, tax moves, insurance reviews, estate coordination.",
+  },
+  {
+    title: "Ongoing Partnership",
+    description:
+      "Quarterly reviews, proactive outreach when life changes, and a partner you can call whenever you need one.",
+  },
+];
+
+const { heading = "How We Work", steps = defaultSteps } = Astro.props;
+---
+
+<section class="py-20 md:py-28" style="background:#fff;">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2
+      class="text-3xl md:text-4xl text-center mb-16"
+      style="font-family:var(--font-family-serif,'DM Serif Display',Georgia,serif); color:var(--color-primary,#1B2B4B);"
+    >
+      {heading}
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+      <!-- Connector line on large screens -->
+      <div
+        class="hidden lg:block absolute top-8 left-[12.5%] right-[12.5%] h-px"
+        style="background:color-mix(in srgb, var(--color-accent,#C9A96E) 30%, transparent); z-index:0;"
+      ></div>
+
+      {
+        steps.map((step, i) => (
+          <div class="relative flex flex-col items-center text-center" style="z-index:1;">
+            <div
+              class="w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold mb-6 shadow-md"
+              style="background:var(--color-accent,#C9A96E); color:var(--color-primary,#1B2B4B);"
+            >
+              {i + 1}
+            </div>
+            <h3
+              class="text-lg font-semibold mb-3"
+              style="color:var(--color-primary,#1B2B4B);"
+            >
+              {step.title}
+            </h3>
+            <p class="text-sm leading-relaxed" style="color:var(--color-text-muted,#4B5563);">
+              {step.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

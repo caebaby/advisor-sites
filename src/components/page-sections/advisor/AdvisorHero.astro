@@ -1,0 +1,65 @@
+---
+const {
+  headline = "Your Financial Life, Finally Under Control",
+  subheadline = "Independent, fee-only financial planning for physicians, executives, and business owners.",
+  ctaLabel = "Schedule a Free Consultation",
+  ctaUrl = "https://calendly.com/placeholder",
+  secondaryLabel = "See How We Help →",
+  secondaryUrl = "/services/",
+  heroImage = "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=1200&q=80",
+  heroImageAlt = "Financial advisor in a modern office",
+} = Astro.props;
+---
+
+<section class="py-20 md:py-28" style="background:var(--color-bg, #FAF8F5);">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Text -->
+      <div>
+        <h1
+          style="font-family:var(--font-family-serif,'DM Serif Display',Georgia,serif); color:var(--color-primary,#1B2B4B);"
+          class="text-4xl md:text-5xl lg:text-6xl leading-tight mb-6"
+        >
+          {headline}
+        </h1>
+        <p
+          class="text-lg md:text-xl leading-relaxed mb-10 max-w-lg"
+          style="color:var(--color-text-muted,#4B5563);"
+        >
+          {subheadline}
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href={ctaUrl}
+            class="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-sm tracking-wide transition-all duration-200 hover:scale-105"
+            style="background:var(--color-accent,#C9A96E); color:var(--color-primary,#1B2B4B);"
+          >
+            {ctaLabel}
+          </a>
+          <a
+            href={secondaryUrl}
+            class="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-sm transition-colors hover:underline"
+            style="color:var(--color-accent,#C9A96E);"
+          >
+            {secondaryLabel}
+          </a>
+        </div>
+      </div>
+      <!-- Image -->
+      <div class="relative">
+        <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+          <img
+            src={heroImage}
+            alt={heroImageAlt}
+            class="w-full h-full object-cover"
+            loading="eager"
+          />
+        </div>
+        <div
+          class="absolute -bottom-4 -right-4 w-24 h-24 rounded-2xl -z-10"
+          style="background:color-mix(in srgb, var(--color-accent,#C9A96E) 20%, transparent);"
+        ></div>
+      </div>
+    </div>
+  </div>
+</section>

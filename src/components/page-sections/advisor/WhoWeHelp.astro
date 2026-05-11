@@ -1,0 +1,110 @@
+---
+interface Persona {
+  title: string;
+  description: string;
+  iconName?: string;
+}
+
+interface Props {
+  heading?: string;
+  personas?: Persona[];
+}
+
+const defaultPersonas: Persona[] = [
+  {
+    title: "Physicians Approaching Partnership",
+    description:
+      "Navigating student loans, income spikes, equity decisions, and a first real financial plan — all at once.",
+    iconName: "stethoscope",
+  },
+  {
+    title: "Executives Managing Equity",
+    description:
+      "RSUs, options, concentrated positions, and a tax bill that surprises you every April.",
+    iconName: "briefcase",
+  },
+  {
+    title: "Business Owners Planning Exits",
+    description:
+      "Selling or transitioning a business you spent decades building — making sure the outcome matches the sacrifice.",
+    iconName: "building-office",
+  },
+];
+
+const { heading = "Who We Work With", personas = defaultPersonas } = Astro.props;
+---
+
+<section class="py-20 md:py-28" style="background:#FAF8F5;">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2
+      class="text-3xl md:text-4xl text-center mb-14"
+      style="font-family:var(--font-family-serif,'DM Serif Display',Georgia,serif); color:var(--color-primary,#1B2B4B);"
+    >
+      {heading}
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {
+        personas.map((persona) => (
+          <div
+            class="rounded-2xl p-8 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+            style="background:#fff; border:1px solid #E5E7EB;"
+          >
+            <div
+              class="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
+              style="background:color-mix(in srgb, var(--color-accent,#C9A96E) 15%, transparent);"
+            >
+              <svg
+                class="w-6 h-6"
+                style="color:var(--color-accent,#C9A96E);"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+              >
+                {persona.iconName === "stethoscope" && (
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"
+                  />
+                )}
+                {persona.iconName === "briefcase" && (
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z"
+                  />
+                )}
+                {persona.iconName === "building-office" && (
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"
+                  />
+                )}
+                {!["stethoscope", "briefcase", "building-office"].includes(
+                  persona.iconName || ""
+                ) && (
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                )}
+              </svg>
+            </div>
+            <h3
+              class="text-xl font-semibold mb-3"
+              style="color:var(--color-primary,#1B2B4B);"
+            >
+              {persona.title}
+            </h3>
+            <p style="color:var(--color-text-muted,#4B5563);" class="leading-relaxed">
+              {persona.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
