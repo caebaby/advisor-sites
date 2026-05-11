@@ -12,18 +12,18 @@ import { fontProviders } from "astro/config";
 
 export const siteFonts = [
   {
-    name: "Inter",
+    name: "Plus Jakarta Sans",
     cssVariable: "--font-body",
     provider: fontProviders.google(),
-    weights: ["100 900"],
+    weights: ["300 800"],
     styles: ["normal"],
     subsets: ["latin"],
   },
   {
-    name: "Raleway",
+    name: "DM Serif Display",
     cssVariable: "--font-headings",
     provider: fontProviders.google(),
-    weights: ["100 900"],
+    weights: ["400"],
     styles: ["normal"],
     subsets: ["latin"],
   },
