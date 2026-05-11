@@ -18,8 +18,8 @@ const paragraphs = body.split("\n\n").filter(Boolean);
 ---
 
 <section class="py-20 md:py-28" style="background:#FAF8F5;">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+  <div style="max-width:80rem; margin:0 auto; padding:0 1.5rem;">
+    <div class="bio-grid">
       <!-- Photo -->
       <div class="relative">
         <div class="rounded-3xl overflow-hidden shadow-2xl aspect-[3/4]">
@@ -58,3 +58,8 @@ const paragraphs = body.split("\n\n").filter(Boolean);
     </div>
   </div>
 </section>
+
+<style>
+  .bio-grid { display:grid; grid-template-columns:1fr; gap:4rem; align-items:start; }
+  @media(min-width:1024px){ .bio-grid { grid-template-columns:1fr 1fr; } }
+</style>

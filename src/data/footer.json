@@ -1,6 +1,6 @@
 {
-  "logoSource": "/favicon.svg",
-  "logoAlternateSource": "/favicon.svg",
+  "logoSource": "/logo.svg",
+  "logoAlternateSource": "/logo.svg",
   "logoAlt": "Harmon Wealth Advisors",
   "links": [
     {
@@ -34,5 +34,5 @@
       "link": "https://twitter.com/placeholder"
     }
   ],
-  "footerText": "© 2026 Harmon Wealth Advisors. All rights reserved. Fee-only fiduciary financial planning."
+  "footerText": "© 2026 Harmon Wealth Advisors. All rights reserved. Harmon Wealth Advisors is a registered investment adviser in the State of Texas. This website is for informational purposes only and does not constitute investment advice."
 }

@@ -36,14 +36,14 @@ const { heading = "How We Work", steps = defaultSteps } = Astro.props;
 ---
 
 <section class="py-20 md:py-28" style="background:#fff;">
-  <div class="max-w-7xl mx-auto px-6">
+  <div style="max-width:80rem; margin:0 auto; padding:0 1.5rem;">
     <h2
       class="text-3xl md:text-4xl text-center mb-16"
       style="font-family:var(--font-family-serif,'DM Serif Display',Georgia,serif); color:var(--color-primary,#1B2B4B);"
     >
       {heading}
     </h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+    <div class="how-grid" style="position:relative;">
       <!-- Connector line on large screens -->
       <div
         class="hidden lg:block absolute top-8 left-[12.5%] right-[12.5%] h-px"
@@ -74,3 +74,9 @@ const { heading = "How We Work", steps = defaultSteps } = Astro.props;
     </div>
   </div>
 </section>
+
+<style>
+  .how-grid { display:grid; grid-template-columns:1fr; gap:2rem; }
+  @media(min-width:768px){ .how-grid { grid-template-columns:repeat(2,1fr); } }
+  @media(min-width:1024px){ .how-grid { grid-template-columns:repeat(4,1fr); } }
+</style>
