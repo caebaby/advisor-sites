@@ -1,0 +1,8 @@
+label: Testimonials
+description: Client quote cards
+icon: chat-bubble-left
+tags:
+  - advisor
+value:
+  _component: page-sections/advisor/advisor-testimonials
+  heading: "What Clients Say"

@@ -1,0 +1,17 @@
+label: How We Work
+description: Numbered steps showing your process
+icon: list-bullet
+tags:
+  - advisor
+value:
+  _component: page-sections/advisor/how-we-help
+  heading: "How We Work"
+  steps:
+    - title: "Discovery"
+      description: "We learn everything about your financial life — income, goals, concerns, and what keeps you up at night."
+    - title: "Your Plan"
+      description: "We build a comprehensive financial plan tailored to your situation, goals, and timeline."
+    - title: "Implementation"
+      description: "We put the plan into action — investments, insurance, tax strategy, and estate coordination."
+    - title: "Ongoing"
+      description: "Life changes. We meet regularly to adjust your plan as your situation evolves."

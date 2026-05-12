@@ -1,0 +1,11 @@
+label: Bottom CTA
+description: Full-width navy call-to-action band
+icon: megaphone
+tags:
+  - advisor
+value:
+  _component: page-sections/advisor/advisor-bottom-cta
+  heading: "Ready to Take Control of Your Financial Life?"
+  subheading: "Schedule a free 30-minute consultation. No pressure, no jargon — just a real conversation about what's possible."
+  ctaLabel: "Schedule a Free Consultation"
+  ctaUrl: "https://calendly.com/placeholder"

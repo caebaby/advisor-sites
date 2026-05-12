@@ -1,0 +1,18 @@
+label: Who We Help
+description: Three-column persona cards showing your ideal clients
+icon: user-group
+tags:
+  - advisor
+value:
+  _component: page-sections/advisor/who-we-help
+  heading: "Who We Work With"
+  personas:
+    - title: "Physicians Approaching Partnership"
+      description: "Navigating student loans, income spikes, equity decisions, and a first real financial plan — all at once."
+      iconName: "stethoscope"
+    - title: "Executives Managing Equity"
+      description: "RSUs, options, concentrated positions, and a tax bill that surprises you every April."
+      iconName: "briefcase"
+    - title: "Business Owners Planning Exits"
+      description: "Selling or transitioning a business you spent decades building."
+      iconName: "building-office"

@@ -1,0 +1,12 @@
+label: Advisor Bio
+description: Two-column bio with photo and background
+icon: user-circle
+tags:
+  - advisor
+value:
+  _component: page-sections/advisor/advisor-bio
+  heading: "Meet Your Advisor"
+  name: "James R. Harmon, CFP®, CPWA®"
+  bio: "James founded Harmon Wealth Advisors after 15 years in institutional finance, with a simple belief: independent, fee-only advice should be available to anyone who has worked hard to build wealth."
+  image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80"
+  imageAlt: "James Harmon, CFP"

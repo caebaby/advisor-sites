@@ -1,0 +1,9 @@
+label: Service Cards
+description: Grid of service offerings
+icon: squares-2x2
+tags:
+  - advisor
+value:
+  _component: page-sections/advisor/service-cards
+  heading: "Our Services"
+  subheading: "Comprehensive financial planning across every area of your financial life."

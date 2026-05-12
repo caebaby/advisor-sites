@@ -1,0 +1,15 @@
+label: Advisor Hero
+description: Full-width hero with headline, subheadline, dual CTAs, and image
+icon: home
+tags:
+  - advisor
+value:
+  _component: page-sections/advisor/advisor-hero
+  headline: "Your Financial Life, Finally Under Control"
+  subheadline: "Independent, fee-only financial planning for physicians, executives, and business owners."
+  ctaLabel: "Schedule a Free Consultation"
+  ctaUrl: "https://calendly.com/placeholder"
+  secondaryLabel: "See How We Help →"
+  secondaryUrl: "/services/"
+  heroImage: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&q=80"
+  heroImageAlt: "Financial advisor meeting with client"
