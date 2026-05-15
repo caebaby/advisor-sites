@@ -5,6 +5,8 @@ import yaml from '@rollup/plugin-yaml';
 import mdx from '@astrojs/mdx';
 import icon from 'astro-icon';
 import editableRegions from '@cloudcannon/editable-regions/astro-integration';
+import sanity from '@sanity/astro';
+import react from '@astrojs/react';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { siteFonts } from './site-fonts.mjs';
@@ -44,6 +46,13 @@ export default defineConfig({
       },
     },
     editableRegions(),
+    sanity({
+      projectId: process.env.PUBLIC_SANITY_PROJECT_ID || 'placeholder',
+      dataset: process.env.PUBLIC_SANITY_DATASET || 'production',
+      useCdn: false,
+      studioBasePath: '/studio',
+    }),
+    react(),
     icon({
       iconDir: path.resolve(__dirname, 'src/icons'),
       svgoOptions: {
