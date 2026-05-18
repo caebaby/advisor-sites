@@ -1,0 +1,114 @@
+---
+/**
+ * /demo — Sanity CMS end-to-end proof page
+ *
+ * Fetches siteSettings from Sanity and renders them.
+ * Falls back to placeholder values if no document exists yet.
+ * Add content in Sanity Studio at /studio to see it update here.
+ */
+import { sanityClient } from 'sanity:client'
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+let settings: Record<string, string> | null = null
+let fetchError: string | null = null
+
+try {
+  settings = await sanityClient.fetch(`*[_type == "siteSettings"][0]`)
+} catch (err) {
+  fetchError = err instanceof Error ? err.message : String(err)
+}
+
+const firmName     = settings?.firmName     || 'Your Firm Name'
+const advisorName  = settings?.advisorName  || 'Jane Doe, CFP®'
+const tagline      = settings?.tagline      || 'Helping families build wealth and confidence for every stage of life.'
+const ctaLabel     = settings?.ctaLabel     || 'Schedule a Consultation'
+const ctaUrl       = settings?.ctaUrl       || '#'
+
+const hasRealData  = !!settings
+---
+
+<BaseLayout title="Sanity CMS Demo" description="End-to-end Sanity CMS proof page" noindex={true}>
+  <main class="min-h-screen bg-white font-sans">
+
+    <!-- Banner -->
+    <div class="bg-amber-50 border-b border-amber-200 px-4 py-3 text-center text-sm text-amber-800">
+      {fetchError ? (
+        <span>
+          ⚠ Sanity fetch error: <code class="font-mono">{fetchError}</code> — showing fallback values.
+        </span>
+      ) : hasRealData ? (
+        <span>
+          ✅ This content is <strong>live from Sanity CMS</strong> — edit it in Studio at <code class="font-mono">/studio</code> to see changes instantly.
+        </span>
+      ) : (
+        <span>
+          📋 No Sanity content yet — showing <strong>fallback placeholder values</strong>. Add a <code class="font-mono">siteSettings</code> document in <a href="/studio" class="underline font-medium">Sanity Studio</a> to populate this page.
+        </span>
+      )}
+    </div>
+
+    <!-- Hero -->
+    <header class="bg-[#0f2044] text-white py-20 px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-sm font-semibold uppercase tracking-widest text-[#c9a84c] mb-3">
+          {advisorName}
+        </p>
+        <h1 class="text-4xl sm:text-5xl font-bold leading-tight mb-6">
+          {firmName}
+        </h1>
+        <p class="text-xl text-slate-300 mb-10 max-w-xl mx-auto">
+          {tagline}
+        </p>
+        <a
+          href={ctaUrl}
+          class="inline-block bg-[#c9a84c] hover:bg-[#b8943f] text-white font-semibold px-8 py-4 rounded-lg text-base transition-colors duration-200"
+        >
+          {ctaLabel}
+        </a>
+      </div>
+    </header>
+
+    <!-- Data debug card -->
+    <section class="max-w-2xl mx-auto my-16 px-6">
+      <div class="border border-slate-200 rounded-xl p-6 bg-slate-50">
+        <h2 class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">
+          Sanity document debug
+        </h2>
+        <dl class="space-y-3 text-sm">
+          <div class="flex gap-3">
+            <dt class="w-36 shrink-0 text-slate-500 font-medium">Source</dt>
+            <dd class={hasRealData ? 'text-emerald-600 font-semibold' : 'text-slate-400 italic'}>
+              {hasRealData ? 'Sanity CMS (live)' : 'Fallback defaults'}
+            </dd>
+          </div>
+          <div class="flex gap-3">
+            <dt class="w-36 shrink-0 text-slate-500 font-medium">firmName</dt>
+            <dd class="text-slate-800">{firmName}</dd>
+          </div>
+          <div class="flex gap-3">
+            <dt class="w-36 shrink-0 text-slate-500 font-medium">advisorName</dt>
+            <dd class="text-slate-800">{advisorName}</dd>
+          </div>
+          <div class="flex gap-3">
+            <dt class="w-36 shrink-0 text-slate-500 font-medium">tagline</dt>
+            <dd class="text-slate-800">{tagline}</dd>
+          </div>
+          <div class="flex gap-3">
+            <dt class="w-36 shrink-0 text-slate-500 font-medium">ctaLabel</dt>
+            <dd class="text-slate-800">{ctaLabel}</dd>
+          </div>
+          <div class="flex gap-3">
+            <dt class="w-36 shrink-0 text-slate-500 font-medium">ctaUrl</dt>
+            <dd class="text-slate-800 font-mono">{ctaUrl}</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-100 py-8 text-center text-xs text-slate-400">
+      Sanity demo page · project <code class="font-mono">0if7655p</code> / dataset <code class="font-mono">production</code>
+    </footer>
+
+  </main>
+</BaseLayout>
