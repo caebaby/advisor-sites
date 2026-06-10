@@ -1,33 +1,97 @@
 # LongView — Fee Language Copy Changes
-**Purpose:** Remove disparaging references to commission-based advisors. Reframe around fiduciary duty — LongView's fee structure is independent of what clients buy, so advice is always aligned with client outcomes.
+**Purpose:** Two fixes in one doc:
+1. Remove disparaging references to commission-based advisors
+2. Remove all "fee-only" references (LongView is NOT fee-only — this is a compliance issue)
 
-**Reframe principle:** Stop saying "we don't earn commissions" (which implies other advisors are bad). Instead say: our compensation doesn't change based on what you buy — so our advice has no agenda other than your outcome.
+**Reframe principle:** Replace both with the fiduciary angle — *"We're legally required to act in your interest. Our fee doesn't change based on what you buy, so our advice doesn't either."*
+
+**Global find/replace for "fee-only" → "fiduciary"** (Johnny can run a bulk find/replace for the simple instances, then handle the copy rewrites below manually)
+
+⚠️ **NAPFA references** — NAPFA is specifically a fee-only organization. If LongView is not fee-only, the "NAPFA Member" credential on every page and in author bios needs to be removed or verified with client before launch.
+
+⚠️ **Whole life blog post** — The entire premise of `longview_post-whole-life-trap.html` needs to change. LongView uses whole life as a legitimate strategy. See special note at bottom of this doc.
 
 ---
 
 ## CHECKLIST — Every Instance to Change
 
-- [ ] `longview_homepage_v8.html` — Line 507 — hero subhead
-- [ ] `longview_homepage_v8.html` — Line 634 — pain section body copy
-- [ ] `longview_who-we-serve.html` — Line 283 — pill badge
+### Fee Language (disparaging)
+- [ ] `longview_homepage_v8.html` — Line 507 — hero subhead ("No commissions. No products. No upsell.")
+- [ ] `longview_homepage_v8.html` — Line 634 — pain section ("you were targeted… fee-only means we earn nothing")
+- [ ] `longview_homepage_v8.html` — Line 757 — services section ("not around products we're incentivized to sell. Because we're fee-only")
+- [ ] `longview_homepage_v8.html` — Line 1180 — quiz card ("Most earn commissions on what they sell you")
+- [ ] `longview_who-we-serve.html` — Line 283 — pill badge ("No Commissions. Ever.")
 - [ ] `longview_who-we-serve.html` — Line 332 — ICP section body
 - [ ] `longview_who-we-serve.html` — Line 340 — pull quote
-- [ ] `longview_who-we-serve.html` — Line 374-375 — situation card headline + body
-- [ ] `longview_services.html` — Line 274 — insurance card body
-- [ ] `longview_services.html` — Line 314 — differentiation block headline
-- [ ] `longview_services.html` — Line 401 — CTA subtext
-- [ ] `longview_services.html` — Line 405 — CTA trust bar
-- [ ] `longview_icp-earlycareer.html` — Line 396 — CTA subtext
-- [ ] `longview_icp-laterstage.html` — Line 303 — work-optional section body
+- [ ] `longview_who-we-serve.html` — Line 374–375 — situation card headline + body
+- [ ] `longview_who-we-serve.html` — Line 607 — FAQ ("We don't sell insurance products, annuities, or commission-based investments")
+- [ ] `longview_services.html` — Line 274 — insurance card ("because we earn no commissions")
+- [ ] `longview_services.html` — Line 314 — differentiation headline ("No commissions. Ever.")
+- [ ] `longview_services.html` — Line 401 — CTA subtext ("No commissions. No products.")
+- [ ] `longview_services.html` — Line 405 — CTA trust bar ("No commissions, ever")
+- [ ] `longview_icp-earlycareer.html` — Line 385 — objection answer ("We're fee-only. We earn nothing from the products we recommend — no commissions on insurance, no kickbacks")
+- [ ] `longview_icp-earlycareer.html` — Line 396 — CTA subtext ("someone who has something to sell")
+- [ ] `longview_icp-laterstage.html` — Line 303 — work-optional section
+- [ ] `longview_icp-laterstage.html` — Line 400 — objection answer ("we earn nothing from products, commissions, or revenue-sharing")
+- [ ] `longview_icp-diy.html` — Line 437 — objection answer ("No assets under management. No commissions.")
 - [ ] `longview_icp-diy.html` — Line 457 — CTA subtext
-- [ ] `longview_icp-diy.html` — Line 461 — CTA trust item
-- [ ] `longview_icp-diy.html` — Line 512 — trust bar
-- [ ] `longview_post-whole-life-trap.html` — Lines 273, 277, 317 — article body *(see special note)*
+- [ ] `longview_icp-diy.html` — Line 461 — CTA trust item ("No commissions, ever")
+- [ ] `longview_icp-diy.html` — Line 512 — trust bar ("Fee-only. No commissions, ever.")
+- [ ] `longview_process.html` — Line 512 — CTA trust item ("Fee-only. No commissions, ever.")
+- [ ] `longview_post-whole-life-trap.html` — Lines 273, 277, 306, 317, 329, 343 — article body *(see special note)*
 - [ ] `longview_blog.html` — Line 294 — blog card excerpt
-- [ ] `longview_advisor-profile.html` — Line 432 — bio copy
-- [ ] `longview_advisor-profile.html` — Line 765 — booking note
-- [ ] `longview_advisor-profile-esposito.html` — Line 764 — booking note
-- [ ] `longview_advisor-profile-holmes.html` — Line 762 — booking note
+- [ ] `longview_post-first-year-attending.html` — Line 307 — article body ("earn commissions on insurance products… structural conflict")
+- [ ] `longview_post-first-year-attending.html` — Line 309 — article body ("Fee-only means the advisor earns no commissions from any product")
+- [ ] `longview_post-work-optional.html` — Line 303 — article body
+- [ ] `longview_landing-pslf.html` — Line 252 — trust bar ("No products to sell")
+- [ ] `longview_post-assessment.html` — Line 284 — booking subtext ("No products. No pitch.")
+- [ ] All advisor profiles — Line ~432 — bio ("Fee-only means I earn no commissions")
+- [ ] All advisor profiles — Line ~770 — booking card ("Fee-only — no commissions, no products")
+
+### "Fee-Only" Label (compliance — replace with "Fiduciary")
+- [ ] `longview_homepage_v8.html` — Line 501 — nav trust bar
+- [ ] `longview_homepage_v8.html` — Line 522 — stat block ("Fee-Only")
+- [ ] `longview_homepage_v8.html` — Line 563 — trust item ("NAPFA Fee-Only Member") ⚠️ verify NAPFA status
+- [ ] `longview_homepage_v8.html` — Line 840 — cred stat ("Fee-Only NAPFA Member") ⚠️ verify NAPFA status
+- [ ] `longview_homepage_v8.html` — Line 1016 — form trust ("Fee-only fiduciary · NAPFA member") ⚠️
+- [ ] `longview_homepage_v8.html` — Line 1187 — quiz option ("fee-only advisor")
+- [ ] `longview_icp-earlycareer.html` — Line 204 — hero trust bar
+- [ ] `longview_icp-earlycareer.html` — Line 398 — CTA note
+- [ ] `longview_icp-laterstage.html` — Line 200 — hero trust bar
+- [ ] `longview_icp-laterstage.html` — Line 416 — CTA note
+- [ ] `longview_icp-diy.html` — Line 217 — hero trust bar
+- [ ] `longview_icp-diy.html` — Line 411 — how-it-works step
+- [ ] `longview_icp-diy.html` — Line 459 — CTA note
+- [ ] `longview_services.html` — Line 194 — hero trust bar
+- [ ] `longview_services.html` — Line 339 — differentiation headline ("Fee-only fiduciary")
+- [ ] `longview_services.html` — Line 403 — CTA note
+- [ ] `longview_who-we-serve.html` — Line 281 — pill badge ("Fee-Only")
+- [ ] `longview_who-we-serve.html` — meta description — Line 7
+- [ ] `longview_team.html` — Line 261 — page hero sub ("Fee-only fiduciaries")
+- [ ] `longview_team.html` — Line 755 — bottom CTA trust
+- [ ] `longview_process.html` — Line 512 — trust bar
+- [ ] `longview_advisor-profile.html` — Line 371 — credential pill ("Fee-Only")
+- [ ] `longview_advisor-profile.html` — Line 431 — bio
+- [ ] `longview_advisor-profile.html` — Line 515 — video caption
+- [ ] `longview_advisor-profile.html` — Line 767 — booking card
+- [ ] `longview_advisor-profile.html` — Line 799 — trust bar
+- [ ] `longview_advisor-profile.html` — Line 814 — compliance text
+- [ ] `longview_advisor-profile.html` — Line 824 — footer tagline
+- [ ] `longview_advisor-profile.html` — meta description — Line 7
+- [ ] `longview_advisor-profile-esposito.html` — same locations as above
+- [ ] `longview_advisor-profile-holmes.html` — Line 421 — eyebrow ("Why I left banking for fee-only planning") — needs rewrite
+- [ ] `longview_advisor-profile-holmes.html` — Line 428 — bio ("fee-only, fiduciary, and built entirely around the client's interest") — keep sentiment, remove "fee-only"
+- [ ] `longview_advisor-profile-holmes.html` — Line 713 — about section
+- [ ] All blog post author bios — "fee-only, fiduciary financial planning firm" → "fiduciary financial planning firm"
+- [ ] All blog post author bios — "Fee-Only · Fiduciary · NAPFA Member" credential bar ⚠️ remove NAPFA if not verified
+- [ ] All sidebar bios — "Fee-only fiduciary advisors"
+- [ ] `longview_landing-pslf.html` — Line 7 — meta description
+- [ ] `longview_landing-pslf.html` — Line 252 — hero trust
+- [ ] `longview_landing-pslf.html` — Line 400 — cred stat
+- [ ] `longview_post-assessment.html` — Line 306 — trust item
+- [ ] `longview_book.html` — Line 174 — trust bar ("Fee-only · Fiduciary · NAPFA Member") ⚠️
+- [ ] `longview_book.html` — Line 249 — trust item
+- [ ] `longview_licensing.html` — footer tagline
 - [ ] `longview_landing-pslf.html` — Line 252 — hero trust bar
 - [ ] `longview_landing-pslf.html` — Line 7 — meta description
 - [ ] `longview_post-first-year-attending.html` — Line 459 — CTA subtext
@@ -333,12 +397,31 @@ CHANGE TO:
 
 ---
 
+## SPECIAL CASE — Whole Life Blog Post (`longview_post-whole-life-trap.html`)
+
+⚠️ **This entire article needs a new angle.** LongView uses whole life insurance as a legitimate strategy for some clients. The current article ("The Whole Life Trap") positions whole life as something physicians get deceived into buying — which directly contradicts what LongView does.
+
+**New angle:** Whole life can be the right tool in the right situation. The real issue is whether it's being recommended for the right reasons. As a fiduciary, LongView evaluates every strategy on its merits for that specific client.
+
+**Suggested new title:** *"Whole Life Insurance for Physicians: The Right Questions to Ask"*
+
+**Article needs to:**
+- Remove all "you were sold something bad" framing
+- Remove language implying commissioned advisors sell bad products
+- Reframe around: there are situations where whole life makes sense (LongView uses it), and situations where it doesn't — the key is getting an objective evaluation from someone whose advice doesn't change based on what you buy
+- Keep the educational content (how it works, cash value, etc.) — that's valuable
+- Change the CTA from "talk to a fee-only advisor" to "talk to a fiduciary who will tell you honestly if it's right for your situation"
+
+**This is a significant rewrite — recommend getting copy from Chris/LPP team before Johnny implements.**
+
+---
+
 ## NOTES
 
-1. **"Fee-only" as a label** — This is a regulated term (NAPFA definition). If LongView is not technically fee-only (given MML Investors Services on the licensing page), confirm with client whether to use "fiduciary" instead throughout. This is a compliance question, not just a copy question.
+1. **NAPFA membership** — NAPFA is specifically a fee-only organization. If LongView is not fee-only, they cannot be listed as NAPFA members. Every reference to "NAPFA Member" across the site needs to be removed or verified with client. This is a compliance/accuracy issue, not just copy.
 
-2. **Whole life blog post** — The article title "The Whole Life Trap" is itself somewhat charged. Consider renaming to "Whole Life Insurance and Physicians: What to Know Before You Decide" — less disparaging, still useful.
+2. **Global "fee-only" replacement** — Johnny can run a bulk find/replace of `fee-only` → `fiduciary` to catch the simple instances (trust bars, meta descriptions, nav notes). The copy rewrites above handle the instances where the surrounding sentence also needs to change.
 
-3. **Trust bar items** — Short trust bar items like "No commissions, ever" appear in many footers/CTAs. Global replacement: "Fiduciary standard, always" or "Fee independent of your choices."
+3. **Trust bar items** — Replace "No commissions, ever" with "Fiduciary standard, always" globally.
 
 4. **Testimonials** — Any pull quotes that reference being sold something need to be verified as real quotes before changing. Placeholder quotes can be updated freely.
