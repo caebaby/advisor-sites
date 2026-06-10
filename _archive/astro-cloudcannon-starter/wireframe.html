@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advisor Site — Wireframe v3 (Direct Response)</title>
+<style>
+  :root {
+    --ink:#2b2b2b; --mute:#8a8a8a; --line:#c4c4c4; --fill:#f1f1f1;
+    --note:#fff6d8; --noteline:#e8c84a; --accent:#1f3a5f; --new:#1d6b4a;
+    --icp:#6b3fa0;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body {
+    font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    color:var(--ink); background:#e9e9e9; padding:40px 20px;
+  }
+  .canvas { max-width:1080px; margin:0 auto; }
+  h1 { font-size:24px; letter-spacing:-.5px; }
+  h2 {
+    font-size:13px; text-transform:uppercase; letter-spacing:1.5px;
+    color:var(--mute); margin:48px 0 14px; border-bottom:1px solid var(--line);
+    padding-bottom:6px;
+  }
+  .lead { color:var(--mute); margin-top:6px; }
+
+  .screen { background:#fff; border:1px solid var(--line); margin-bottom:8px; }
+  .screen-label {
+    background:var(--accent); color:#fff; font-size:11px; font-weight:600;
+    text-transform:uppercase; letter-spacing:1px; padding:7px 14px;
+  }
+
+  .wf {
+    border:1.5px dashed var(--line); background:var(--fill);
+    margin:10px; padding:20px 16px 18px; position:relative;
+  }
+  .wf.icp { border-color:var(--icp); border-style:solid; background:#f4eef9; }
+  .wf.fix { border-color:var(--new); border-style:solid; background:#eef6f1; }
+  .wf .tag {
+    position:absolute; top:-9px; left:12px; background:#fff;
+    font-size:10px; font-weight:700; text-transform:uppercase;
+    letter-spacing:1px; color:var(--mute); padding:0 6px;
+  }
+  .wf.icp .tag { color:var(--icp); }
+  .wf.fix .tag { color:var(--new); }
+  .wf .slot {
+    position:absolute; top:-9px; right:12px; background:var(--icp); color:#fff;
+    font-size:9px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.5px; padding:2px 7px; border-radius:8px;
+  }
+  .wf p { color:var(--mute); font-size:13px; }
+  .wf .copy { color:#555; font-size:13px; font-style:italic; }
+  .row { display:flex; gap:10px; }
+  .row > .wf { flex:1; margin:10px 0; }
+
+  .ph-line { height:9px; background:#d3d3d3; border-radius:2px; margin:6px 0; }
+  .ph-line.short { width:45%; }
+  .ph-line.mid { width:70%; }
+  .ph-h { height:16px; background:#bdbdbd; border-radius:2px; width:60%; margin-bottom:8px; }
+  .ph-img {
+    background:repeating-linear-gradient(45deg,#e3e3e3,#e3e3e3 8px,#ededed 8px,#ededed 16px);
+    border:1px solid var(--line); display:flex; align-items:center;
+    justify-content:center; color:var(--mute); font-size:11px;
+    text-transform:uppercase; letter-spacing:1px; min-height:80px;
+  }
+  .btn {
+    display:inline-block; background:var(--accent); color:#fff;
+    font-size:11px; font-weight:600; padding:8px 14px; border-radius:3px;
+    text-transform:uppercase; letter-spacing:.5px;
+  }
+  .btn.ghost { background:none; color:var(--accent); border:1.5px solid var(--accent); }
+  .btn.big { padding:13px 22px; font-size:13px; }
+
+  .nav {
+    display:flex; align-items:center; gap:18px; padding:12px 16px;
+    border-bottom:1px solid var(--line); font-size:12px; color:var(--mute);
+  }
+  .nav .logo { width:90px; height:20px; background:#bdbdbd; border-radius:2px; }
+  .nav .spacer { flex:1; }
+
+  .trust {
+    display:flex; justify-content:center; gap:26px; flex-wrap:wrap;
+    background:#eef1f5; padding:12px 16px; margin:10px;
+    font-size:12px; color:var(--accent); font-weight:600;
+    text-transform:uppercase; letter-spacing:.5px;
+    border:1.5px solid var(--line);
+  }
+
+  .quote {
+    font-style:italic; color:#666; font-size:13px;
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    padding:10px 0; margin:6px 0;
+  }
+
+  .note {
+    background:var(--note); border-left:3px solid var(--noteline);
+    padding:10px 14px; margin:0 10px 14px; font-size:13px;
+  }
+  .note b { color:#7a5c00; }
+
+  .legend { font-size:12px; color:var(--mute); margin-top:10px; }
+  .pill {
+    display:inline-block; background:var(--accent); color:#fff; font-size:10px;
+    padding:1px 7px; border-radius:10px; letter-spacing:.5px; vertical-align:1px;
+  }
+  .pill.icp { background:var(--icp); }
+
+  .pipeline {
+    background:#f4eef9; border:1px solid var(--icp); border-radius:6px;
+    padding:14px 18px; margin-top:16px; font-size:13px;
+  }
+  .pipeline b { color:var(--icp); }
+  .flow { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-top:10px; }
+  .flow .step {
+    background:#fff; border:1.5px solid var(--icp); border-radius:4px;
+    padding:8px 12px; font-size:12px; font-weight:600; color:var(--icp);
+  }
+  .flow .arrow { color:var(--icp); font-weight:700; }
+
+  .smnode {
+    border:1.5px solid var(--line); background:#fff; padding:9px 13px;
+    font-size:13px; border-radius:4px; min-width:115px; text-align:center;
+  }
+  .smnode.key { border-color:var(--accent); border-width:2px; font-weight:600; }
+  .smnode.icp { border-color:var(--icp); border-width:2px; }
+  .smnode small { display:block; color:var(--mute); font-size:10px; font-weight:400; margin-top:2px; }
+  .tier { border:1px solid var(--line); background:#fff; margin-bottom:8px; }
+  .tier-label {
+    color:#fff; font-size:11px; font-weight:600; text-transform:uppercase;
+    letter-spacing:1px; padding:7px 14px;
+  }
+  .tier-nodes { display:flex; flex-wrap:wrap; gap:8px; padding:14px; }
+  .tier-foot { padding:0 14px 12px; font-size:12px; color:var(--mute); }
+  .tier-sub {
+    font-size:11px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.5px; margin:0 14px 6px;
+  }
+</style>
+</head>
+<body>
+<div class="canvas">
+
+  <h1>Advisor Site — Wireframe v3</h1>
+  <p class="lead">Direct-response structure. Agitate the problem, then present the solution. Boxes are layout, not final design.</p>
+
+  <div class="pipeline">
+    <b>The advisor build process</b>
+    <div class="flow" style="align-items:stretch">
+      <span class="step">1. Research<small style="display:block;font-weight:400;margin-top:3px;opacity:.75">the advisor's ICP + market problems</small></span>
+      <span class="arrow">&rarr;</span>
+      <span class="step">2. Generate Copy<small style="display:block;font-weight:400;margin-top:3px;opacity:.75">DR copy from the research</small></span>
+      <span class="arrow">&rarr;</span>
+      <span class="step">3. Collect from Advisor<small style="display:block;font-weight:400;margin-top:3px;opacity:.75">brand, credentials, photos, testimonials</small></span>
+      <span class="arrow">&rarr;</span>
+      <span class="step">4. Build Site<small style="display:block;font-weight:400;margin-top:3px;opacity:.75">assemble in the CMS</small></span>
+      <span class="arrow">&rarr;</span>
+      <span class="step">5. Launch<small style="display:block;font-weight:400;margin-top:3px;opacity:.75">deploy live</small></span>
+    </div>
+    <p style="color:#5a4072;margin-top:10px">
+      <b style="color:var(--icp)">Purple boxes below</b> = copy generated in steps 1 to 2 from the advisor's ICP.
+      Everything else is filled with what the advisor provides in step 3. Same skeleton for every advisor,
+      different problem language per market.
+    </p>
+  </div>
+
+  <!-- ===================== SITEMAP ===================== -->
+  <h2>Sitemap — three tiers</h2>
+  <div class="legend" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px">
+    <span class="pill icp">PURPLE = ICP-generated DR copy</span>
+    <span class="pill" style="background:var(--new)">GREEN = trust / conversion fixture</span>
+    <span class="pill">NAVY = standard section</span>
+  </div>
+
+  <div class="tier">
+    <div class="tier-label" style="background:var(--accent)">Tier 1 — Conversion pages (direct response)</div>
+    <div class="tier-nodes">
+      <div class="smnode key">Home<small>main DR page</small></div>
+      <div class="smnode key">Assessment<small>opt-in gate</small></div>
+      <div class="smnode key">Results<small>convert</small></div>
+      <div class="smnode key">Book a Call<small>destination</small></div>
+    </div>
+    <div class="tier-foot">The focused conversion path. Every other page funnels here.</div>
+  </div>
+
+  <div class="tier">
+    <div class="tier-label" style="background:var(--icp)">Tier 2 — SEO landing pages (each funnels into Tier 1)</div>
+    <div class="tier-sub" style="color:var(--mute);margin-top:14px">Service pages — one each, ranks for service + intent keywords</div>
+    <div class="tier-nodes" style="padding-top:0;padding-bottom:4px">
+      <div class="smnode">Financial Planning</div>
+      <div class="smnode">Investment Management</div>
+      <div class="smnode">Tax Strategy</div>
+      <div class="smnode">Estate Planning</div>
+      <div class="smnode">Insurance Review</div>
+    </div>
+    <div class="tier-sub" style="color:var(--icp);margin-top:12px">Audience pages — one per ICP, ranks for "advisor for [niche]"</div>
+    <div class="tier-nodes" style="padding-top:0;padding-bottom:4px">
+      <div class="smnode icp">For Physicians<small>generated from ICP</small></div>
+      <div class="smnode icp">For Business Owners<small>generated from ICP</small></div>
+      <div class="smnode icp">For Executives<small>generated from ICP</small></div>
+    </div>
+    <div class="tier-nodes" style="padding-top:8px">
+      <div class="smnode">About / Story</div>
+    </div>
+    <div class="tier-foot">Audience pages are the standout: each is a full DR page and an SEO target, all generated from one ICP input.</div>
+  </div>
+
+  <div class="tier">
+    <div class="tier-label" style="background:#5a5a5a">Tier 3 — Content (authority + long-tail SEO)</div>
+    <div class="tier-nodes">
+      <div class="smnode">Blog<small>informational queries</small></div>
+      <div class="smnode">Podcast<small>episode pages</small></div>
+      <div class="smnode">Contact / Legal<small>table stakes</small></div>
+    </div>
+    <div class="tier-foot">A new domain takes 6 to 12 months to rank. Build the structure now, expect SEO traffic later.</div>
+  </div>
+
+  <!-- ===================== HOMEPAGE ===================== -->
+  <h2>Homepage — the direct-response flow</h2>
+  <div class="screen">
+    <div class="screen-label">Page — Home</div>
+
+    <div class="nav">
+      <div class="logo"></div>
+      <span>Home</span><span>About</span><span>Services</span>
+      <span>Assessment</span><span>Blog</span><span>Podcast</span>
+      <span class="spacer"></span>
+      <span class="btn">Book a Call</span>
+    </div>
+
+    <div class="wf icp"><span class="tag">1 · Hook</span><span class="slot">ICP copy</span>
+      <div class="row" style="align-items:center">
+        <div style="flex:1.3">
+          <div class="ph-h" style="height:22px;width:85%"></div>
+          <p class="copy">Headline names the prospect's #1 problem or the outcome they want. Example (physician ICP): "You spent a decade becoming a doctor. No one taught you what to do with the income."</p>
+          <p class="copy" style="margin-top:6px">Subhead: the promise. "A plan that turns a high income into real, lasting wealth."</p>
+          <div style="margin-top:14px">
+            <span class="btn big">Take the Assessment</span>
+            <span class="btn ghost big">Book a Call</span>
+          </div>
+        </div>
+        <div class="ph-img" style="flex:1;min-height:150px">Advisor photo</div>
+      </div>
+    </div>
+
+    <div class="trust">
+      <span>★ Fiduciary</span><span>★ Fee-Only</span><span>★ CFP®</span>
+      <span>★ CPWA®</span><span>★ 18 Yrs</span><span>★ $320M+ AUM</span>
+    </div>
+
+    <div class="wf icp"><span class="tag">2 · The Problem — agitate</span><span class="slot">ICP copy</span>
+      <div class="ph-h" style="margin:0 auto 6px;width:55%"></div>
+      <p class="copy" style="text-align:center;margin-bottom:10px">Heading: "Does this sound familiar?" Then the prospect's real pains, in their voice.</p>
+      <div class="row">
+        <div class="wf" style="background:#fff"><div class="ph-line"></div><div class="ph-line short"></div><p style="font-size:11px">"You earn more than ever and somehow feel less in control."</p></div>
+        <div class="wf" style="background:#fff"><div class="ph-line"></div><div class="ph-line short"></div><p style="font-size:11px">"Every April the tax bill blindsides you."</p></div>
+        <div class="wf" style="background:#fff"><div class="ph-line"></div><div class="ph-line short"></div><p style="font-size:11px">"You have a pile of accounts, but no actual plan."</p></div>
+      </div>
+      <p>Replaces "Who We Help." Persona framing describes the visitor. Problem framing makes them feel seen.</p>
+    </div>
+
+    <div class="wf icp"><span class="tag">3 · Why It Keeps Happening — the mechanism</span><span class="slot">ICP copy</span>
+      <div class="ph-h" style="margin:0 auto 6px;width:60%"></div>
+      <p class="copy">The enemy. Example: "Most of the advice you have been given came from someone paid to sell you a product. Commission-driven advice is not built to serve you. It is built to move inventory."</p>
+      <p>This is the DR pivot. Name why the prospect is stuck so the solution lands as the escape, not just another pitch.</p>
+    </div>
+
+    <div class="wf icp"><span class="tag">4 · A Better Way — the solution</span><span class="slot">ICP copy</span>
+      <div class="ph-h" style="margin:0 auto 10px;width:50%"></div>
+      <p class="copy" style="text-align:center;margin-bottom:10px">"Here is the different approach: fee-only, fiduciary, comprehensive." The 3-step process, reframed as the way out of the problem above.</p>
+      <div class="row">
+        <div class="wf" style="background:#fff"><b style="color:var(--icp)">1</b><div class="ph-line"></div><div class="ph-line short"></div></div>
+        <div class="wf" style="background:#fff"><b style="color:var(--icp)">2</b><div class="ph-line"></div><div class="ph-line short"></div></div>
+        <div class="wf" style="background:#fff"><b style="color:var(--icp)">3</b><div class="ph-line"></div><div class="ph-line short"></div></div>
+      </div>
+    </div>
+
+    <div class="wf icp"><span class="tag">5 · What We Solve — services as outcomes</span><span class="slot">ICP copy</span>
+      <p class="copy" style="text-align:center;margin-bottom:10px">Each service framed problem &rarr; outcome, not by feature name.</p>
+      <div class="row">
+        <div class="wf" style="background:#fff"><p style="font-size:11px;color:var(--icp)">PROBLEM: surprised by taxes</p><div class="ph-line"></div><p style="font-size:11px">&rarr; Proactive tax strategy</p></div>
+        <div class="wf" style="background:#fff"><p style="font-size:11px;color:var(--icp)">PROBLEM: no real plan</p><div class="ph-line"></div><p style="font-size:11px">&rarr; Comprehensive planning</p></div>
+        <div class="wf" style="background:#fff"><p style="font-size:11px;color:var(--icp)">PROBLEM: sold products</p><div class="ph-line"></div><p style="font-size:11px">&rarr; Fee-only investing</p></div>
+      </div>
+      <p style="text-align:center"><span class="btn ghost">See all services</span></p>
+    </div>
+
+    <div class="wf"><span class="tag">6 · Story Video</span>
+      <div class="ph-img" style="min-height:160px">▶  60 to 90s advisor intro video</div>
+      <p style="text-align:center">Lands here as proof of empathy. "This person understands my situation."</p>
+    </div>
+
+    <div class="wf"><span class="tag">7 · Proof — testimonials + credentials</span>
+      <div class="row">
+        <div class="wf" style="background:#fff"><div class="ph-line"></div><div class="ph-line"></div><div class="ph-line short"></div></div>
+        <div class="wf" style="background:#fff"><div class="ph-line"></div><div class="ph-line"></div><div class="ph-line short"></div></div>
+        <div class="wf" style="background:#fff"><div class="ph-line"></div><div class="ph-line"></div><div class="ph-line short"></div></div>
+      </div>
+      <p style="font-size:11px;font-style:italic">Compliance note: testimonials may not represent all clients' experiences.</p>
+    </div>
+
+    <div class="wf" style="background:var(--accent)"><span class="tag" style="color:var(--accent)">8 · The First Step — Assessment offer</span>
+      <div style="text-align:center;color:#fff;padding:6px">
+        <div class="ph-h" style="background:#5a7196;margin:auto auto 8px;width:55%"></div>
+        <p style="color:#c3cedd">"Not sure where you stand? The free 2-minute assessment shows you exactly where your plan is strong and where it is exposed."</p>
+        <div style="margin-top:12px"><span class="btn big" style="background:#fff;color:var(--accent)">Start the Assessment</span></div>
+      </div>
+    </div>
+
+    <div class="wf fix"><span class="tag">9 · Risk Reversal — first call + FAQ</span>
+      <div class="row">
+        <div class="wf" style="background:#fff"><b style="color:var(--new)">1</b><div class="ph-line"></div><p style="font-size:11px">No prep needed</p></div>
+        <div class="wf" style="background:#fff"><b style="color:var(--new)">2</b><div class="ph-line"></div><p style="font-size:11px">30 min, we listen</p></div>
+        <div class="wf" style="background:#fff"><b style="color:var(--new)">3</b><div class="ph-line"></div><p style="font-size:11px">No pressure, no obligation</p></div>
+      </div>
+      <div class="wf" style="background:#fff;margin:6px 0">▸ &nbsp; What does this cost?</div>
+      <div class="wf" style="background:#fff;margin:6px 0">▸ &nbsp; Is there an account minimum?</div>
+      <div class="wf" style="background:#fff;margin:6px 0">▸ &nbsp; What if we are not a good fit?</div>
+      <p>De-risks the offer and clears the objections that silently kill conversion.</p>
+    </div>
+
+    <div class="wf icp"><span class="tag">10 · Close — bottom CTA</span><span class="slot">ICP copy</span>
+      <div style="text-align:center">
+        <div class="ph-h" style="margin:auto auto 8px;width:55%"></div>
+        <p class="copy" style="margin-bottom:12px">Restate the transformation, then the ask. "Stop guessing. Get a plan built around your life."</p>
+        <span class="btn big">Book a Free Consultation</span>
+        <div class="quote" style="max-width:480px;margin:14px auto 0;border:none">"A final short client quote sits beside the strongest ask."</div>
+      </div>
+    </div>
+
+    <div class="wf"><span class="tag">11 · Podcast Strip — off the conversion path</span>
+      <div class="row">
+        <div class="wf" style="background:#fff"><div class="ph-img" style="min-height:50px">▶ Ep</div><div class="ph-line"></div></div>
+        <div class="wf" style="background:#fff"><div class="ph-img" style="min-height:50px">▶ Ep</div><div class="ph-line"></div></div>
+        <div class="wf" style="background:#fff"><div class="ph-img" style="min-height:50px">▶ Ep</div><div class="ph-line"></div></div>
+      </div>
+    </div>
+
+    <div class="wf" style="background:#2b2b2b"><span class="tag" style="color:#2b2b2b">Footer</span>
+      <div class="row" style="color:#888;font-size:11px">
+        <div style="flex:1">Contact, phone, office</div>
+        <div style="flex:1">Nav links</div>
+        <div style="flex:1">Disclosures, Form CRS, ADV</div>
+      </div>
+    </div>
+
+    <div style="background:var(--new);color:#fff;padding:11px;text-align:center;font-size:12px;font-weight:600;letter-spacing:.5px">
+      MOBILE STICKY BAR &nbsp;·&nbsp; [ Take the Assessment ]&nbsp;&nbsp;[ Book a Call ] &nbsp;·&nbsp; always one tap away
+    </div>
+  </div>
+
+  <div class="note">
+    <b>The DR spine, top to bottom:</b> Hook (problem) &rarr; agitate the problem &rarr; name why they are stuck (mechanism) &rarr;
+    present the better way (solution) &rarr; services as outcomes &rarr; proof &rarr; the low-commitment offer (assessment) &rarr;
+    risk reversal &rarr; close. Every purple section is generated from the advisor's ICP.
+  </div>
+
+  <!-- ===================== ASSESSMENT ===================== -->
+  <h2>Assessment <span class="pill">opt-in gate</span></h2>
+  <div class="screen">
+    <div class="screen-label">Page — Assessment</div>
+    <div class="nav"><div class="logo"></div><span class="spacer"></span><span>Step 4 of 10</span></div>
+
+    <div class="wf"><span class="tag">Progress</span>
+      <div style="height:8px;background:#ddd;border-radius:4px">
+        <div style="height:8px;width:40%;background:var(--accent);border-radius:4px"></div>
+      </div>
+    </div>
+
+    <div class="wf icp"><span class="tag">Question Card</span><span class="slot">ICP copy</span>
+      <div class="ph-h" style="width:75%;margin-bottom:14px"></div>
+      <p class="copy" style="margin-bottom:10px">Questions are written around the ICP's real worries, so each answer feels diagnostic, not generic.</p>
+      <div class="wf" style="background:#fff;margin:8px 0">○ &nbsp; Answer option A</div>
+      <div class="wf" style="background:#fff;margin:8px 0">● &nbsp; Answer option B (selected)</div>
+      <div class="wf" style="background:#fff;margin:8px 0">○ &nbsp; Answer option C</div>
+      <div style="margin-top:12px">
+        <span class="btn ghost">Back</span>
+        <span class="btn">Next</span>
+      </div>
+    </div>
+
+    <div class="wf" style="background:var(--note)"><span class="tag">Final Step — Email Capture</span>
+      <div class="ph-h" style="width:60%;margin-bottom:6px"></div>
+      <p style="color:#7a5c00">"Where should we send your results?"</p>
+      <div class="wf" style="background:#fff;margin:8px 0">Name</div>
+      <div class="wf" style="background:#fff;margin:8px 0">Email</div>
+      <span class="btn big">See My Results</span>
+    </div>
+  </div>
+
+  <!-- ===================== RESULTS ===================== -->
+  <h2>Results <span class="pill">the conversion moment</span></h2>
+  <div class="note" style="background:#f4eef9;border-left-color:var(--icp)">
+    <b style="color:var(--icp)">Not a unique page per person.</b> Results is a blanket template with 3 band
+    versions (adjustable, 2 to 4). The assessment score buckets the prospect into one band, that version
+    loads, and it names their problem and presents the matching solution. Same DR logic as the homepage,
+    continued onto this page.
+  </div>
+  <div class="screen">
+    <div class="screen-label">Page — Assessment Results</div>
+    <div class="nav"><div class="logo"></div><span class="spacer"></span><span class="btn">Book a Call</span></div>
+
+    <div class="wf icp"><span class="tag">Result band — 1 of 3 versions loads</span><span class="slot">scored</span>
+      <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:8px">
+        <div class="smnode icp" style="min-width:auto">Band A · Exposed<small>serious gaps</small></div>
+        <div class="smnode" style="min-width:auto;opacity:.45">Band B · Underway<small>blind spots</small></div>
+        <div class="smnode" style="min-width:auto;opacity:.45">Band C · Optimizing<small>fine-tuning</small></div>
+      </div>
+      <p style="text-align:center">Score selects the version. Below = the template every band fills.</p>
+    </div>
+
+    <div class="wf"><span class="tag">1 · The Verdict</span>
+      <div style="text-align:center">
+        <div class="ph-img" style="min-height:100px;width:190px;margin:auto;border-radius:50%">Score gauge</div>
+        <div class="ph-h" style="margin:14px auto 0;width:50%"></div>
+        <p>"Here is where you stand." Band name + score.</p>
+      </div>
+    </div>
+
+    <div class="wf icp"><span class="tag">2 · Your Problem, Named</span><span class="slot">band copy</span>
+      <p class="copy">Names the core gap for this band, in the prospect's language. Pulls their 1 to 2 weakest answers so it reads diagnostic, not generic.</p>
+      <div class="wf" style="background:#fff;margin-top:8px"><div class="ph-line mid"></div><div class="ph-line short"></div></div>
+      <div class="wf" style="background:#fff"><div class="ph-line mid"></div><div class="ph-line short"></div></div>
+    </div>
+
+    <div class="wf icp"><span class="tag">3 · What It Is Costing You</span><span class="slot">band copy</span>
+      <p class="copy">Brief consequence of staying here. Light agitation. The DR thread continues onto this page.</p>
+    </div>
+
+    <div class="wf icp"><span class="tag">4 · How It Gets Fixed</span><span class="slot">band copy</span>
+      <p class="copy">The solution for this band: the advisor's approach, framed as the escape from the problem just named.</p>
+    </div>
+
+    <div class="wf" style="background:var(--accent)"><span class="tag" style="color:var(--accent)">5 · Primary CTA — strongest on the site</span>
+      <div style="text-align:center;color:#fff">
+        <div class="ph-h" style="background:#5a7196;margin:auto auto 10px;width:60%"></div>
+        <span class="btn big" style="background:#fff;color:var(--accent)">Book Your Free Consultation</span>
+      </div>
+    </div>
+
+    <div class="wf"><span class="tag">6 · Secondary — "while you wait"</span>
+      <p>3 hand-picked blog posts or podcast episodes, matched to the band. Keeps non-bookers warm for nurture.</p>
+    </div>
+  </div>
+
+  <p class="legend" style="margin-top:30px;text-align:center">
+    Wireframe v3 · Advisor Growth Lab · direct-response structure, copy generated per advisor ICP
+  </p>
+
+</div>
+</body>
+</html>

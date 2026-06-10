@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schedule a Clarity Call — LongView Planning Partners</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & ROOT ─────────────────────────────────────────── */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --lv-navy:#0773BB;--lv-dark:#054A82;--lv-deeper:#032F57;
+  --lv-sky:#38B0E3;--lv-light:#8CD7F7;
+  --lv-gray:#939598;--lv-gl:#D1D2D4;--lv-off:#F4F8FC;
+  --ink:#0F1923;--body:#3D4A58;
+  --max:1240px;
+  --trans:.22s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--ink);background:#fff;min-width:320px;-webkit-font-smoothing:antialiased;min-height:100vh}
+a{text-decoration:none;color:inherit}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 52px}
+
+/* ── MINIMAL NAV ───────────────────────────────────────────── */
+.nav-out{background:#fff;border-bottom:1px solid var(--lv-gl);position:sticky;top:0;z-index:200;transition:box-shadow .3s}
+.nav-out.scrolled{box-shadow:0 4px 24px rgba(5,74,130,.08)}
+.nav-out .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;flex-direction:column;flex-shrink:0;cursor:pointer}
+.logo-name{font-family:'Libre Baskerville',serif;font-size:22px;font-weight:700;color:var(--lv-navy);letter-spacing:-.02em;line-height:1}
+.logo-sub{font-size:9.5px;font-family:'DM Sans',sans-serif;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--lv-gray);margin-top:4px}
+.nav-back{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--lv-gray);cursor:pointer;transition:color var(--trans)}
+.nav-back:hover{color:var(--lv-navy)}
+.nav-back svg{transition:transform var(--trans)}
+.nav-back:hover svg{transform:translateX(-2px)}
+
+/* ── MAIN LAYOUT ───────────────────────────────────────────── */
+.main-wrap{max-width:var(--max);margin:0 auto;padding:0 52px;display:grid;grid-template-columns:40% 1fr;gap:0;min-height:calc(100vh - 72px)}
+
+/* ── LEFT COLUMN — Trust/Reassurance ───────────────────────── */
+.trust-col{padding:60px 56px 60px 0;border-right:1px solid var(--lv-gl);display:flex;flex-direction:column;gap:0}
+.trust-eyebrow{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--lv-sky);margin-bottom:14px}
+.trust-headline{font-family:'Libre Baskerville',serif;font-size:32px;font-weight:700;color:var(--lv-navy);line-height:1.2;letter-spacing:-.025em;margin-bottom:16px}
+.trust-body{font-size:15px;color:var(--body);line-height:1.8;font-weight:300;margin-bottom:32px}
+.trust-divider{width:100%;height:1px;background:var(--lv-gl);margin:28px 0}
+
+/* What to expect */
+.expect-label{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lv-gray);margin-bottom:18px}
+.expect-items{display:flex;flex-direction:column;gap:16px;margin-bottom:0}
+.expect-item{display:flex;align-items:flex-start;gap:14px;font-size:14.5px;color:var(--body);line-height:1.65;font-weight:300}
+.expect-icon{width:22px;height:22px;border-radius:50%;background:rgba(56,176,227,.12);border:1.5px solid rgba(56,176,227,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+
+/* About LongView */
+.about-label{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lv-gray);margin-bottom:14px}
+.about-items{display:flex;flex-direction:column;gap:9px}
+.about-item{display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--body);font-weight:300}
+.about-dot{width:4px;height:4px;border-radius:50%;background:var(--lv-sky);flex-shrink:0}
+.about-item strong{color:var(--ink);font-weight:600}
+
+/* Compliance note */
+.compliance-note{font-size:11.5px;color:var(--lv-gray);line-height:1.6;margin-top:auto;padding-top:24px;border-top:1px solid var(--lv-gl)}
+.compliance-note a{color:var(--lv-navy);text-decoration:underline}
+.compliance-cp{display:inline;font-size:10px;background:var(--lv-off);border:1px dashed var(--lv-gl);padding:1px 6px;border-radius:3px;color:var(--lv-gray)}
+
+/* ── RIGHT COLUMN — Calendly Embed ─────────────────────────── */
+.calendly-col{padding:60px 0 60px 56px;display:flex;flex-direction:column;justify-content:flex-start}
+.calendly-card{background:#fff;border:1px solid var(--lv-gl);border-radius:12px;box-shadow:0 4px 32px rgba(5,74,130,.08),0 1px 4px rgba(5,74,130,.04);overflow:hidden;flex:1;min-height:680px;display:flex;flex-direction:column}
+.calendly-card-header{padding:20px 24px;border-bottom:1px solid var(--lv-gl);background:var(--lv-off);display:flex;align-items:center;gap:12px}
+.calendly-header-icon{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,var(--lv-navy),var(--lv-sky));display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.calendly-header-title{font-size:14px;font-weight:600;color:var(--ink)}
+.calendly-header-sub{font-size:12px;color:var(--lv-gray);margin-top:2px}
+
+/* Calendly embed container */
+.calendly-embed-wrap{flex:1;min-height:640px;position:relative}
+
+/* Placeholder styling — replace with Calendly widget */
+.calendly-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:32px;text-align:center;border:2px dashed var(--lv-gl);border-radius:0 0 12px 12px}
+.calendly-placeholder-icon{width:60px;height:60px;border-radius:12px;background:var(--lv-off);border:1px solid var(--lv-gl);display:flex;align-items:center;justify-content:center;color:var(--lv-gray)}
+.calendly-placeholder-label{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.calendly-placeholder-sub{font-size:13px;color:var(--lv-gray);line-height:1.6;max-width:320px}
+.calendly-embed-instruction{font-size:11.5px;color:var(--lv-sky);font-family:monospace;background:var(--lv-off);border:1px solid var(--lv-gl);padding:8px 14px;border-radius:4px;margin-top:4px;line-height:1.6;text-align:left;max-width:360px}
+
+/* ── TRUST CHIPS STRIP ─────────────────────────────────────── */
+.trust-chips{background:var(--lv-off);border-top:1px solid var(--lv-gl);border-bottom:1px solid var(--lv-gl);padding:16px 0}
+.trust-chips .wrap{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.trust-chip{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:500;color:var(--body);padding:8px 18px;border:1px solid var(--lv-gl);border-radius:20px;background:#fff;white-space:nowrap}
+.trust-chip svg{color:var(--lv-sky)}
+.chip-sep{width:1px;height:20px;background:var(--lv-gl)}
+
+/* ── MINIMAL FOOTER ────────────────────────────────────────── */
+.footer-minimal{background:var(--lv-deeper);padding:20px 0}
+.footer-minimal .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.footer-logo-name{font-family:'Libre Baskerville',serif;font-size:15px;font-weight:700;color:#fff;line-height:1}
+.footer-logo-sub{font-size:8px;font-family:'DM Sans',sans-serif;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);display:block;margin-top:4px}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.35);text-align:right;line-height:1.65}
+.footer-copy a{color:rgba(255,255,255,.45);text-decoration:underline}
+.footer-cp{display:inline;font-size:9.5px;background:rgba(255,255,255,.06);border:1px dashed rgba(255,255,255,.18);padding:1px 5px;border-radius:3px;color:rgba(255,255,255,.3)}
+
+/* ── MOBILE ────────────────────────────────────────────────── */
+@media(max-width:768px){
+  .wrap{padding:0 20px}
+  .main-wrap{padding:0 20px;grid-template-columns:1fr;min-height:auto}
+  .nav-out .wrap{height:64px}
+  .trust-col{padding:40px 0 0;border-right:none;border-bottom:1px solid var(--lv-gl);gap:0}
+  .calendly-col{padding:32px 0 40px}
+  .trust-headline{font-size:26px}
+  .trust-body{font-size:14px}
+  .calendly-card{min-height:560px}
+  .trust-chips .wrap{gap:8px}
+  .chip-sep{display:none}
+  .footer-minimal .wrap{flex-direction:column;gap:10px}
+  .footer-copy{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<!-- ── MINIMAL NAV ────────────────────────────────────────────── -->
+<div class="nav-out" id="nav">
+  <div class="wrap">
+    <a class="logo" href="longview_homepage_v8.html">
+      <img src="images/longview-logo.png" alt="LongView Planning Partners" style="height:44px;width:auto;display:block">
+    </a>
+    <a class="nav-back" href="javascript:history.back()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      Back
+    </a>
+  </div>
+</div>
+
+<!-- ── MAIN TWO-COLUMN LAYOUT ─────────────────────────────────── -->
+<div class="main-wrap">
+
+  <!-- ── LEFT COLUMN — Trust/Reassurance ───────────────────── -->
+  <div class="trust-col">
+
+    <div class="trust-eyebrow">The Clarity Call</div>
+    <h1 class="trust-headline">20 minutes. No pitch. Just clarity.</h1>
+    <p class="trust-body">This isn&rsquo;t a sales call. It&rsquo;s a conversation. We&rsquo;ll tell you exactly where physicians at your career stage typically stand &mdash; and whether LongView is the right fit for your situation. If we&rsquo;re not, we&rsquo;ll say so.</p>
+
+    <div class="trust-divider"></div>
+
+    <!-- What to expect -->
+    <div class="expect-label">What to expect</div>
+    <div class="expect-items">
+      <div class="expect-item">
+        <div class="expect-icon">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#38B0E3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <span>We&rsquo;ll ask about your career stage, loans, and primary financial concerns</span>
+      </div>
+      <div class="expect-item">
+        <div class="expect-icon">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#38B0E3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <span>You&rsquo;ll get a clear picture of what we&rsquo;d focus on for someone in your situation</span>
+      </div>
+      <div class="expect-item">
+        <div class="expect-icon">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#38B0E3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <span>No follow-up unless you ask for it</span>
+      </div>
+    </div>
+
+    <div class="trust-divider"></div>
+
+    <!-- About LongView -->
+    <div class="about-label">About LongView</div>
+    <div class="about-items">
+      <div class="about-item">
+        <div class="about-dot"></div>
+        <span><strong>Fee-only &nbsp;&middot;&nbsp; Fiduciary &nbsp;&middot;&nbsp; NAPFA Member</strong></span>
+      </div>
+      <div class="about-item">
+        <div class="about-dot"></div>
+        <span>1,000+ physician &amp; dentist households</span>
+      </div>
+      <div class="about-item">
+        <div class="about-dot"></div>
+        <span>3 Certified Student Loan Professionals on staff</span>
+      </div>
+      <div class="about-item">
+        <div class="about-dot"></div>
+        <span>Serving physicians and dentists exclusively</span>
+      </div>
+    </div>
+
+    <!-- Compliance note — pushed to bottom -->
+    <div class="compliance-note">
+      LongView Planning Partners is an SEC-registered investment adviser. This call does not constitute investment advice.
+      &nbsp;<span class="compliance-cp">COMPLIANCE PLACEHOLDER</span>
+    </div>
+
+  </div>
+
+  <!-- ── RIGHT COLUMN — Calendly Embed ─────────────────────── -->
+  <div class="calendly-col">
+    <div class="calendly-card">
+
+      <div class="calendly-card-header">
+        <div class="calendly-header-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <div>
+          <div class="calendly-header-title">Schedule a Clarity Call</div>
+          <div class="calendly-header-sub">20 minutes &nbsp;&middot;&nbsp; Video or Phone &nbsp;&middot;&nbsp; Free</div>
+        </div>
+      </div>
+
+      <div class="calendly-embed-wrap">
+
+        <!-- ─────────────────────────────────────────────────── -->
+        <!-- CALENDLY EMBED: Replace this div with your Calendly inline embed script -->
+        <!--
+          Standard Calendly inline embed:
+          1. Go to calendly.com → Event Types → copy your scheduling link
+          2. Replace YOUR-LINK below with your actual Calendly link
+          3. Delete the .calendly-placeholder div and this comment block
+
+          <div class="calendly-inline-widget"
+               data-url="https://calendly.com/YOUR-LINK"
+               style="min-width:320px;height:100%;min-height:640px;"></div>
+          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        -->
+
+        <div class="calendly-placeholder">
+          <div class="calendly-placeholder-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div class="calendly-placeholder-label">Calendly embed goes here</div>
+          <div class="calendly-placeholder-sub">Paste your Calendly inline widget code in place of this placeholder. It will fill this card automatically.</div>
+          <div class="calendly-embed-instruction">data-url="https://calendly.com/YOUR-LINK"</div>
+        </div>
+        <!-- END CALENDLY EMBED -->
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── TRUST CHIPS STRIP ──────────────────────────────────────── -->
+<div class="trust-chips">
+  <div class="wrap">
+    <div class="trust-chip">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Fee-Only
+    </div>
+    <div class="chip-sep"></div>
+    <div class="trust-chip">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      Fiduciary
+    </div>
+    <div class="chip-sep"></div>
+    <div class="trust-chip">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      No Commission Products
+    </div>
+  </div>
+</div>
+
+<!-- ── MINIMAL FOOTER ─────────────────────────────────────────── -->
+<div class="footer-minimal">
+  <div class="wrap">
+    <div>
+      <div class="footer-logo-name">LongView</div>
+      <span class="footer-logo-sub">Planning Partners</span>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 LongView Planning Partners &nbsp;&middot;&nbsp; <a href="mailto:info@longviewplan.com">info@longviewplan.com</a> &nbsp;&middot;&nbsp; 901-322-9114<br>
+      <span class="footer-cp">COMPLIANCE PLACEHOLDER</span>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  /* Minimal scroll shadow on nav — this page is mostly static */
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function(){
+    nav.classList.toggle('scrolled', window.scrollY > 16);
+  }, {passive:true});
+
+  /* No animations — keep page fast and distraction-free */
+})();
+</script>
+</body>
+</html>

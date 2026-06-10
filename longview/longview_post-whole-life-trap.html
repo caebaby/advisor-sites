@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Whole Life Insurance Trap: Why Physicians in Training Are the #1 Target — LongView Planning Partners</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & ROOT ─────────────────────────────────────────── */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --lv-navy:#0773BB;--lv-dark:#054A82;--lv-deeper:#032F57;
+  --lv-sky:#38B0E3;--lv-light:#8CD7F7;
+  --lv-gray:#939598;--lv-gl:#D1D2D4;--lv-off:#F4F8FC;
+  --ink:#0F1923;--body:#3D4A58;
+  --max:1240px;
+  --grad:linear-gradient(95deg,#0773BB 0%,#38B0E3 100%);
+  --trans:.22s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--ink);background:#fff;min-width:320px;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 52px}
+
+/* ── PULSE ANIMATION ──────────────────────────────────────── */
+@keyframes ctaPulse{
+  0%{box-shadow:0 0 0 0 rgba(7,115,187,.4)}
+  70%{box-shadow:0 0 0 10px rgba(7,115,187,0)}
+  100%{box-shadow:0 0 0 0 rgba(7,115,187,0)}
+}
+.btn-primary:not(:hover){animation:ctaPulse 2.4s ease-out infinite}
+
+/* ── TOP BAR ───────────────────────────────────────────────── */
+.topbar{background:var(--lv-deeper)}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:36px}
+.topbar span{font-size:11.5px;color:rgba(255,255,255,.52)}
+.topbar .c{color:rgba(255,255,255,.88);font-weight:500;display:flex;align-items:center;gap:18px}
+.topbar .c a{color:inherit;opacity:.88;transition:opacity var(--trans)}
+.topbar .c a:hover{opacity:1}
+.tb-sep{width:1px;height:12px;background:rgba(255,255,255,.2)}
+
+/* ── NAV ───────────────────────────────────────────────────── */
+.nav-out{background:#fff;border-bottom:1px solid rgba(209,210,212,.6);position:sticky;top:0;z-index:200;transition:box-shadow .3s}
+.nav-out.scrolled{box-shadow:0 4px 32px rgba(5,74,130,.1)}
+.nav-out .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;flex-direction:column;flex-shrink:0;cursor:pointer}
+.logo-name{font-family:'Libre Baskerville',serif;font-size:22px;font-weight:700;color:var(--lv-navy);letter-spacing:-.02em;line-height:1}
+.logo-sub{font-size:9.5px;font-family:'DM Sans',sans-serif;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--lv-gray);margin-top:4px}
+.nav-links{display:flex;gap:6px;align-items:center}
+.nl{font-size:13.5px;color:#5a6472;padding:8px 14px;border-radius:4px;cursor:pointer;transition:color var(--trans);position:relative;white-space:nowrap}
+.nl::after{content:'';position:absolute;bottom:4px;left:14px;right:14px;height:1.5px;background:var(--lv-navy);transform:scaleX(0);transform-origin:left;transition:transform .28s}
+.nl:hover{color:var(--lv-navy)}
+.nl:hover::after,.nl.active::after{transform:scaleX(1)}
+.nl.active{color:var(--lv-navy)}
+.nav-right{display:flex;align-items:center;gap:12px}
+.ncta{font-size:13px;font-weight:600;padding:11px 24px;background:var(--lv-navy);color:#fff;border-radius:4px;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:background var(--trans),box-shadow var(--trans),transform var(--trans)}
+.ncta:hover{background:var(--lv-dark);box-shadow:0 6px 20px rgba(7,115,187,.3);transform:translateY(-1px)}
+
+/* ── ARTICLE HERO ──────────────────────────────────────────── */
+.art-hero{background:linear-gradient(130deg,#021E3A 0%,var(--lv-deeper) 50%,var(--lv-dark) 100%);position:relative;overflow:hidden;padding:56px 0 48px}
+.art-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.06) 1px,transparent 1px);background-size:26px 26px}
+.art-hero::after{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(-45deg,transparent,transparent 16px,rgba(255,255,255,.016) 16px,rgba(255,255,255,.016) 17px)}
+.art-hero-in{position:relative;z-index:2;max-width:800px}
+.cat-pill{display:inline-flex;align-items:center;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--lv-sky);padding:5px 14px;border-radius:20px;margin-bottom:20px}
+.art-headline{font-family:'Libre Baskerville',serif;font-size:40px;font-weight:700;color:#fff;line-height:1.12;letter-spacing:-.025em;margin-bottom:18px}
+.art-subhead{font-size:16px;color:rgba(255,255,255,.68);line-height:1.72;font-weight:300;margin-bottom:28px;max-width:680px}
+.art-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.art-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--lv-navy),var(--lv-sky));display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;flex-shrink:0;border:2px solid rgba(255,255,255,.25)}
+.art-author-info{display:flex;flex-direction:column;gap:2px}
+.art-author-name{font-size:13px;font-weight:600;color:#fff}
+.art-date{font-size:12px;color:rgba(255,255,255,.5)}
+.art-compliance-pill{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;background:rgba(255,255,255,.06)}
+
+/* ── ARTICLE LAYOUT ────────────────────────────────────────── */
+.art-layout{display:grid;grid-template-columns:1fr 340px;gap:52px;padding:60px 0 80px;align-items:start}
+
+/* ── ARTICLE BODY ──────────────────────────────────────────── */
+.art-body{min-width:0}
+.art-body h2{font-family:'Libre Baskerville',serif;font-size:24px;font-weight:700;color:var(--ink);line-height:1.3;letter-spacing:-.02em;margin-top:40px;margin-bottom:16px;padding-bottom:6px;border-bottom:1px solid var(--lv-gl)}
+.art-body h2:first-child{margin-top:0}
+.art-body p{font-size:16px;color:var(--body);line-height:1.85;margin-bottom:18px;font-weight:300}
+.art-body strong{font-weight:600;color:var(--ink)}
+.art-body ol{margin:0 0 20px 20px;display:flex;flex-direction:column;gap:12px}
+.art-body ol li{font-size:16px;color:var(--body);line-height:1.75;font-weight:300;padding-left:4px}
+.art-body ol li strong{color:var(--ink)}
+.art-body ul{margin:0 0 20px 20px;display:flex;flex-direction:column;gap:10px}
+.art-body ul li{font-size:15.5px;color:var(--body);line-height:1.7;font-weight:300}
+
+/* Pull quote */
+.pull-quote{border-left:4px solid var(--lv-sky);padding:24px 28px;background:rgba(7,115,187,.04);border-radius:0 8px 8px 0;margin:32px 0;position:relative}
+.pull-quote::before{content:'\201C';font-family:'Libre Baskerville',serif;font-size:64px;color:var(--lv-sky);line-height:.7;opacity:.35;position:absolute;top:16px;left:20px}
+.pull-quote-text{font-family:'Libre Baskerville',serif;font-size:20px;font-style:italic;color:#2a3240;line-height:1.68;padding-left:36px}
+.pull-quote-attr{font-size:12px;color:var(--lv-gray);margin-top:10px;padding-left:36px;font-weight:500}
+
+/* Math callout */
+.math-box{background:var(--lv-off);border:1px solid var(--lv-gl);border-left:4px solid var(--lv-navy);border-radius:0 8px 8px 0;padding:24px 28px;margin:28px 0}
+.math-box-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lv-navy);margin-bottom:12px}
+.math-row{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--lv-gl);font-size:14.5px;color:var(--body);font-weight:300}
+.math-row:last-child{border-bottom:none}
+.math-row strong{color:var(--ink);font-weight:600}
+.math-note{font-size:12px;color:var(--lv-gray);margin-top:10px;line-height:1.6}
+
+/* Compliance callout */
+.compliance-callout{background:#FFF9EC;border:1px solid #E8D98C;border-left:4px solid #C9A800;border-radius:0 8px 8px 0;padding:20px 24px;margin-top:40px}
+.compliance-callout-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8a6a00;margin-bottom:8px}
+.compliance-callout-text{font-size:13px;color:#5a4a00;line-height:1.65}
+.compliance-callout .cp{display:inline;font-size:10px;background:rgba(201,168,0,.15);border:1px dashed #C9A800;padding:1px 7px;border-radius:3px;color:#8a6a00}
+
+/* ── SIDEBAR ───────────────────────────────────────────────── */
+.art-sidebar{position:sticky;top:100px;display:flex;flex-direction:column;gap:20px}
+.sidebar-card{background:#fff;border:1px solid var(--lv-gl);border-top:3px solid var(--lv-sky);border-radius:8px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.sidebar-card-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lv-sky)}
+.sidebar-author-row{display:flex;align-items:center;gap:12px}
+.sidebar-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--lv-navy),var(--lv-sky));display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;flex-shrink:0}
+.sidebar-author-name{font-size:14px;font-weight:600;color:var(--ink)}
+.sidebar-bio{font-size:13px;color:var(--body);line-height:1.65;font-weight:300}
+.sidebar-cta{display:flex;align-items:center;justify-content:center;gap:6px;padding:11px 18px;background:var(--lv-navy);color:#fff;border-radius:5px;font-size:13px;font-weight:600;cursor:pointer;transition:background var(--trans),transform var(--trans);text-align:center}
+.sidebar-cta:hover{background:var(--lv-dark);transform:translateY(-1px)}
+.sidebar-lm-title{font-size:15px;font-weight:700;color:var(--ink);line-height:1.35}
+.sidebar-lm-bullets{display:flex;flex-direction:column;gap:8px}
+.sidebar-lm-bullet{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--body);line-height:1.5;font-weight:300}
+.sidebar-lm-bullet-dot{width:5px;height:5px;border-radius:50%;background:var(--lv-sky);flex-shrink:0;margin-top:6px}
+.sidebar-lm-input{height:42px;border:1.5px solid var(--lv-gl);border-radius:5px;padding:0 14px;font-size:13px;font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--lv-off);width:100%;transition:border-color var(--trans)}
+.sidebar-lm-input:focus{outline:none;border-color:var(--lv-navy)}
+.sidebar-lm-btn{width:100%;height:42px;background:var(--lv-sky);color:#fff;border:none;border-radius:5px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background var(--trans)}
+.sidebar-lm-btn:hover{background:var(--lv-navy)}
+.sidebar-related-title{font-size:13.5px;font-weight:600;color:var(--ink)}
+.related-item{font-size:13px;color:var(--body);line-height:1.5;padding:10px 0;border-bottom:1px solid var(--lv-gl);display:flex;flex-direction:column;gap:4px}
+.related-item:last-child{border-bottom:none}
+.related-coming{font-size:10px;color:var(--lv-gray);text-transform:uppercase;letter-spacing:.1em;font-weight:500}
+
+/* ── AUTHOR BIO STRIP ──────────────────────────────────────── */
+.author-bio-strip{background:var(--lv-off);border-top:1px solid var(--lv-gl);border-bottom:1px solid var(--lv-gl);padding:48px 0}
+.author-bio-in{display:flex;align-items:flex-start;gap:28px}
+.author-bio-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--lv-navy),var(--lv-sky));display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:#fff;flex-shrink:0}
+.author-bio-content{flex:1}
+.author-bio-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lv-sky);margin-bottom:6px}
+.author-bio-name{font-family:'Libre Baskerville',serif;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:10px}
+.author-bio-text{font-size:14.5px;color:var(--body);line-height:1.75;font-weight:300;margin-bottom:10px;max-width:640px}
+.author-bio-cred{font-size:12px;color:var(--lv-gray);margin-bottom:18px}
+.bio-cta{display:inline-flex;align-items:center;gap:6px;padding:12px 24px;background:var(--lv-navy);color:#fff;border-radius:5px;font-size:13.5px;font-weight:600;cursor:pointer;transition:background var(--trans),transform var(--trans)}
+.bio-cta:hover{background:var(--lv-dark);transform:translateY(-1px)}
+
+/* ── RELATED ARTICLES ──────────────────────────────────────── */
+.related-section{padding:64px 0;background:#fff}
+.section-eyebrow{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--lv-sky);margin-bottom:28px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.related-card{background:#fff;border:1px solid var(--lv-gl);border-top:3px solid var(--lv-gl);border-radius:8px;padding:24px;opacity:.55;filter:grayscale(.3);position:relative;display:flex;flex-direction:column;gap:10px}
+.related-badge{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lv-gray);background:var(--lv-off);border:1px solid var(--lv-gl);padding:3px 10px;border-radius:20px;width:fit-content}
+.related-lock{position:absolute;top:14px;right:14px;width:18px;height:18px;color:var(--lv-gray)}
+.related-card-title{font-size:14.5px;font-weight:600;color:var(--ink);line-height:1.45}
+.related-card-cat{font-size:11px;color:var(--lv-gray)}
+
+/* ── ARTICLE CTA STRIP ─────────────────────────────────────── */
+.art-cta-strip{background:linear-gradient(135deg,#021E3A 0%,var(--lv-dark) 60%,var(--lv-navy) 100%);padding:72px 0;text-align:center;position:relative;overflow:hidden}
+.art-cta-strip::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.05) 1px,transparent 1px);background-size:24px 24px}
+.art-cta-in{position:relative;z-index:2;max-width:600px;margin:0 auto}
+.art-cta-headline{font-family:'Libre Baskerville',serif;font-size:32px;font-weight:700;color:#fff;line-height:1.2;letter-spacing:-.02em;margin-bottom:12px}
+.art-cta-sub{font-size:15.5px;color:rgba(255,255,255,.65);line-height:1.7;font-weight:300;margin-bottom:28px}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:700;padding:16px 36px;background:#fff;color:var(--lv-dark);border-radius:5px;cursor:pointer;letter-spacing:.01em;transition:transform var(--trans),box-shadow var(--trans);text-decoration:none}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(0,0,0,.28)}
+
+/* ── FOOTER ────────────────────────────────────────────────── */
+.footer-pre{background:var(--lv-deeper);padding:22px 0;border-top:1px solid rgba(255,255,255,.07)}
+.footer-pre .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.footer-pre-copy{font-size:13px;color:rgba(255,255,255,.45)}
+.footer-pre-contact{display:flex;align-items:center;gap:24px;font-size:13px;color:rgba(255,255,255,.7);font-weight:500}
+.footer-pre-contact a{color:inherit;transition:color var(--trans)}
+.footer-pre-contact a:hover{color:#fff}
+.footer-out{background:#0D0D0D}
+.footer-out .wrap{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px;padding-top:36px;padding-bottom:36px}
+.footer-logo-name{font-family:'Libre Baskerville',serif;font-size:18px;font-weight:700;color:#fff;line-height:1}
+.footer-logo-sub{font-size:9px;font-family:'DM Sans',sans-serif;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#555;display:block;margin-top:5px}
+.footer-links{display:flex;gap:24px;font-size:12px;color:#666;flex-wrap:wrap}
+.footer-links a{transition:color var(--trans)}
+.footer-links a:hover{color:#999}
+.footer-disc{font-size:11px;color:#444;max-width:480px;line-height:1.65;text-align:right}
+
+/* ── SCROLL REVEAL ─────────────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1);will-change:opacity,transform;backface-visibility:hidden}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ── MOBILE ────────────────────────────────────────────────── */
+@media(max-width:768px){
+  .wrap{padding:0 20px}
+  .topbar .wrap{flex-direction:column;height:auto;padding-top:8px;padding-bottom:8px;gap:4px;text-align:center}
+  .nav-links{display:none}
+  .nav-out .wrap{height:64px}
+  .art-headline{font-size:28px}
+  .art-layout{grid-template-columns:1fr;gap:0}
+  .art-sidebar{position:static;order:2;margin-top:48px}
+  .related-grid{grid-template-columns:1fr}
+  .author-bio-in{flex-direction:column;gap:16px}
+  .footer-out .wrap{flex-direction:column;gap:16px}
+  .footer-disc{text-align:left}
+  .art-cta-headline{font-size:24px}
+  .math-row{flex-direction:column;gap:2px}
+}
+</style>
+</head>
+<body>
+
+<!-- ── TOP BAR ─────────────────────────────────────────────── -->
+<div class="topbar">
+  <div class="wrap">
+    <span>Comprehensive financial planning for physicians &amp; dentists &mdash; Memphis, TN &amp; nationwide</span>
+    <span class="c">
+      <a href="tel:9013229114">901-322-9114</a>
+      <span class="tb-sep"></span>
+      <a href="mailto:info@longviewplan.com">info@longviewplan.com</a>
+    </span>
+  </div>
+</div>
+
+<!-- ── NAV ─────────────────────────────────────────────────── -->
+<div class="nav-out" id="nav">
+  <div class="wrap">
+    <a class="logo" href="longview_homepage_v8.html">
+      <img src="images/longview-logo.png" alt="LongView Planning Partners" style="height:44px;width:auto;display:block">
+    </a>
+    <div class="nav-links">
+      <a class="nl" href="longview_homepage_v8.html">Why LongView</a>
+      <a class="nl" href="longview_services.html">Our Services</a>
+      <a class="nl" href="longview_who-we-serve.html">Who We Serve</a>
+      <a class="nl" href="longview_process.html">Our Process</a>
+      <a class="nl" href="longview_team.html">Our Team</a>
+      <a class="nl active" href="longview_blog.html">Resources</a>
+    </div>
+    <div class="nav-right">
+      <a class="ncta" href="longview_book.html">Schedule an Icebreaker Call &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── ARTICLE HERO ───────────────────────────────────────────── -->
+<div class="art-hero">
+  <div class="wrap art-hero-in">
+    <div class="cat-pill">Resident Resources</div>
+    <h1 class="art-headline">The Whole Life Insurance Trap: Why Physicians in Training Are the #1 Target</h1>
+    <p class="art-subhead">If someone approached you during residency about a &ldquo;physician-specific&rdquo; insurance policy, you weren&rsquo;t uniquely gullible &mdash; you were targeted. Here&rsquo;s what to know.</p>
+    <div class="art-meta">
+      <div class="art-avatar">LV</div>
+      <div class="art-author-info">
+        <div class="art-author-name">LongView Planning Partners</div>
+        <div class="art-date">May 2026 &nbsp;&middot;&nbsp; 7 min read</div>
+      </div>
+      <div class="art-compliance-pill">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Educational content &mdash; not investment advice
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ARTICLE LAYOUT ─────────────────────────────────────────── -->
+<div class="wrap">
+  <div class="art-layout">
+
+    <!-- ── ARTICLE BODY ──────────────────────────────────────── -->
+    <article class="art-body reveal">
+
+      <p>Almost every physician we work with has the same story. Sometime during residency or fellowship, someone reached out &mdash; often through the hospital, a residents&rsquo; association, or a direct referral from another doctor &mdash; to talk about &ldquo;financial planning for physicians.&rdquo; The conversation eventually landed on a life insurance policy that &ldquo;builds wealth,&rdquo; &ldquo;grows tax-free,&rdquo; and was designed specifically for doctors.</p>
+
+      <p>If that happened to you, you weren&rsquo;t being na&iuml;ve. You were being targeted. Physicians in training represent one of the most sought-after prospects in the insurance sales industry &mdash; high future income, a trusted credential, limited financial knowledge at that stage, and a professional identity that makes them more likely to trust people who approach them with physician-specific framing.</p>
+
+      <p>This article explains how the pitch works, what whole life insurance actually costs over a physician career, what to ask any advisor who proposes a permanent life insurance product, and what a physician in training actually needs &mdash; which is almost never whole life.</p>
+
+      <h2>Why Residents Are the #1 Target</h2>
+
+      <p>The economics are straightforward. An insurance agent who sells a $500/month whole life policy to a first-year resident earns a commission &mdash; often 50&ndash;100% of the first year&rsquo;s premium &mdash; immediately. The agent knows that attending physician income will make that premium easy to sustain. And if the resident keeps the policy for life, the long-term commission tail is significant.</p>
+
+      <p>The targeting methods have become more sophisticated. Some agents attend hospital orientation events or sponsor resident education nights. Others work through financial advisors who co-locate with medical practices. Some are physicians themselves &mdash; or former physicians &mdash; which adds a layer of perceived peer legitimacy. The &ldquo;physician financial community&rdquo; branding (often referencing blogs, podcasts, or Facebook groups that doctors actually use) creates the impression of an endorsed product.</p>
+
+      <p>None of this means every person who approaches a resident with a financial product has bad intentions. But the structure of commissioned insurance sales creates a conflict of interest that is important to understand before any conversation happens.</p>
+
+      <h2>How the Pitch Works</h2>
+
+      <p>The whole life pitch for physicians typically has several consistent components.</p>
+
+      <p><strong>&ldquo;It&rsquo;s designed for physicians.&rdquo;</strong> The policy is usually branded or framed with physician-specific language. This is marketing, not product differentiation. A whole life policy sold to a physician and a whole life policy sold to a teacher are functionally the same product. The physician framing signals familiarity and specialization, but it does not change the underlying product mechanics.</p>
+
+      <p><strong>&ldquo;It builds cash value.&rdquo;</strong> Whole life policies do accumulate a cash value component over time. What is often left underemphasized in the initial pitch: the cash value in a whole life policy grows slowly, internal rates of return are historically modest, and the death benefit typically does not include the accumulated cash value &mdash; the insurer keeps it when you die, unless you specifically structure the policy otherwise. [VERIFY with compliance counsel before publication]</p>
+
+      <p><strong>&ldquo;Tax-free growth.&rdquo;</strong> Cash value in a whole life policy grows tax-deferred, and loans against the policy are generally tax-free. This is true. It is also true that tax-advantaged options like a 401(k), backdoor Roth IRA, and HSA are available to physicians, often provide greater flexibility, and should typically be maximized before any permanent life insurance is considered.</p>
+
+      <p><strong>&ldquo;Asset protection.&rdquo;</strong> In some states, the cash value of a life insurance policy has creditor protection. This is a legitimate planning consideration for certain physicians in high-litigation specialties. It is not, by itself, a reason to buy whole life insurance.</p>
+
+      <h2>What Whole Life Actually Costs a Physician Over a Career</h2>
+
+      <p>The most useful frame is the opportunity cost comparison: what is the difference between paying a whole life premium for 30 years versus buying a term policy at a fraction of the cost and investing the difference? The following is for illustrative purposes only, uses simplified assumptions, and is not a projection or guarantee of any investment outcome.</p>
+
+      <div class="math-box">
+        <div class="math-box-label">Illustrative Comparison — Educational Only</div>
+        <div class="math-row"><span>Whole life premium (illustrative)</span><strong>$500/month</strong></div>
+        <div class="math-row"><span>Term insurance for equivalent coverage (illustrative)</span><strong>~$60&ndash;$100/month</strong></div>
+        <div class="math-row"><span>Monthly difference available to invest</span><strong>~$400/month</strong></div>
+        <div class="math-row"><span>Time horizon</span><strong>30 years</strong></div>
+        <div class="math-row"><span>Total premium paid into whole life policy</span><strong>~$180,000</strong></div>
+        <div class="math-row"><span>$400/month invested for 30 years (hypothetical, varies by return)</span><strong>Significantly more — see note</strong></div>
+        <div class="math-note">Note: This illustration uses simplified estimates for educational purposes. Actual premiums, policy values, term rates, and investment outcomes vary significantly by individual. This is not a recommendation or projection. Speak with a fee-only advisor for analysis specific to your situation. [COMPLIANCE PLACEHOLDER]</div>
+      </div>
+
+      <p>The compounding math across a physician career is the reason fee-only advisors almost universally counsel against whole life insurance for physicians in training unless there is a specific, documented need that term insurance cannot address. The cost difference between a whole life premium and a term premium, invested consistently over a career, is often one of the most consequential financial decisions a physician makes &mdash; and it frequently gets made during a 60-minute meeting in residency without full information on either side.</p>
+
+      <div class="pull-quote">
+        <div class="pull-quote-text">&ldquo;The policy is usually sold during the narrowest window of a physician&rsquo;s financial knowledge, with the longest possible runway for regret.&rdquo;</div>
+        <div class="pull-quote-attr">&mdash; LongView Planning Partners</div>
+      </div>
+
+      <h2>The 3 Questions to Ask Any Advisor Who Proposes a Life Insurance Product</h2>
+
+      <ol>
+        <li><strong>Are you a fiduciary, and will you put that in writing?</strong> A fiduciary is legally required to act in your interest, not the interest of a commission structure. Many advisors who sell insurance products are held to a lower &ldquo;suitability&rdquo; standard, which means the product only needs to be appropriate for you in a general sense &mdash; not necessarily the best option for you. Ask directly: &ldquo;Are you a fiduciary for this recommendation?&rdquo; If the answer is hedged, that is informative.</li>
+        <li><strong>How are you compensated for this recommendation?</strong> An advisor who earns a commission when you buy a whole life policy has a financial interest in that outcome. This does not automatically make the recommendation wrong, but it should be disclosed clearly and understood before you sign anything. Fee-only advisors earn no commissions on any product. [VERIFY fee-only status with client before publishing]</li>
+        <li><strong>Have you modeled the term-plus-invest alternative with my specific numbers?</strong> If an advisor is recommending whole life insurance without showing you a side-by-side comparison to term insurance plus investing the premium difference, you are not getting a complete analysis. A thorough recommendation should include both scenarios.</li>
+      </ol>
+
+      <h2>What a Physician in Training Actually Needs</h2>
+
+      <p>The insurance needs of a physician in residency or fellowship are real &mdash; but they are specific.</p>
+
+      <p><strong>Own-occupation disability insurance</strong> is the most important insurance a physician can own, and it is almost never the thing being sold during residency financial meetings. A true own-occupation disability policy pays if you cannot perform the specific duties of your specialty &mdash; a hand surgeon who loses fine motor control, for example, is disabled under an own-occupation definition even if they could theoretically do other work. Group disability coverage through a hospital employer almost never qualifies as true own-occupation coverage. Individual, portable, own-occupation disability insurance &mdash; obtained before any health conditions arise &mdash; is the protection that actually matters for a physician.</p>
+
+      <p><strong>Term life insurance</strong> is appropriate for a physician with dependents or significant debt. A 20- or 30-year level term policy provides the coverage needed at a fraction of the cost of a whole life policy. Most physicians in training do not need permanent life insurance.</p>
+
+      <p>If you are in residency and have been sold a whole life policy, the analysis is not automatically &ldquo;surrender immediately.&rdquo; Surrender charges in the early years of a whole life policy can be significant, and the right decision depends on how long you have had the policy, what the surrender value is relative to premiums paid, and what your broader financial picture looks like. That analysis should be done with a fee-only advisor who earns nothing from the outcome.</p>
+
+      <h2>How to Evaluate a Whole Life Policy You Already Own</h2>
+
+      <p>Request a current in-force illustration from your insurer. This document shows the projected cash value, death benefit, and premium schedule going forward. Compare the current cash surrender value to the total premiums paid to date. If the surrender value is materially lower than premiums paid, understand that you have already absorbed much of the internal policy cost &mdash; the question then is whether staying or leaving produces a better outcome from this point forward, not from day one.</p>
+
+      <p>The illustration will also show the internal rate of return implied by the policy over various time horizons. Compare this to what your tax-advantaged options could return over the same period. This comparison &mdash; done with honest assumptions, not best-case projections &mdash; is the core of the decision.</p>
+
+      <p>Many physicians who have been in a whole life policy for two to four years find that the break-even point &mdash; where staying in the policy becomes financially rational on its own terms &mdash; is well into the future. Others find the policy has specific benefits (favorable underwriting terms, a guaranteed insurability rider, a specific state&rsquo;s creditor protection) that justify continuation. There is no universal answer. There is, however, a right process.</p>
+
+      <!-- Compliance callout -->
+      <div class="compliance-callout">
+        <div class="compliance-callout-label">Important Disclosure</div>
+        <div class="compliance-callout-text">
+          This article is for educational purposes only and does not constitute investment, tax, legal, or insurance advice. The illustrative comparisons in this article use simplified assumptions and are not projections, guarantees, or recommendations. Every physician&rsquo;s situation is different. Life insurance suitability, disability insurance needs, and investment decisions should be evaluated with a qualified financial advisor, and in consultation with an attorney and tax professional where appropriate. LongView Planning Partners is a fee-only, fiduciary registered investment adviser.
+          &nbsp;<span class="cp">Full disclaimer &mdash; [COMPLIANCE PLACEHOLDER &mdash; insert full ADV disclosure link]</span>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- ── SIDEBAR ─────────────────────────────────────────── -->
+    <aside class="art-sidebar">
+
+      <!-- Author card -->
+      <div class="sidebar-card">
+        <div class="sidebar-card-label">Written by</div>
+        <div class="sidebar-author-row">
+          <div class="sidebar-avatar">LV</div>
+          <div class="sidebar-author-name">LongView Planning Partners</div>
+        </div>
+        <div class="sidebar-bio">Fee-only fiduciary advisors serving physicians and dentists exclusively. Based in Memphis, TN. Nationwide clients.</div>
+        <a class="sidebar-cta" href="longview_book.html">Schedule an Icebreaker Call &rarr;</a>
+      </div>
+
+      <!-- Assessment widget -->
+      <div class="sidebar-card">
+        <div class="sidebar-card-label">Free Assessment</div>
+        <div class="sidebar-lm-title">Are You On Track? Take the Physician Financial Readiness Check</div>
+        <div class="sidebar-lm-bullets">
+          <div class="sidebar-lm-bullet"><div class="sidebar-lm-bullet-dot"></div><span>See where you stand across debt, taxes, insurance, and retirement &mdash; in 3 minutes</span></div>
+          <div class="sidebar-lm-bullet"><div class="sidebar-lm-bullet-dot"></div><span>Personalized to your career stage: resident through later-career attending</span></div>
+          <div class="sidebar-lm-bullet"><div class="sidebar-lm-bullet-dot"></div><span>Free. No email required. Instant results.</span></div>
+        </div>
+        <a class="sidebar-lm-btn" href="longview_post-assessment.html" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;text-decoration:none;line-height:42px">See If You&rsquo;re On Track &rarr;</a>
+      </div>
+
+      <!-- Related articles -->
+      <div class="sidebar-card">
+        <div class="sidebar-related-title">Related Articles</div>
+        <div class="related-item">
+          <span>Your First Year as an Attending: The 5 Financial Decisions That Will Cost You the Most</span>
+          <span class="related-coming">Coming soon</span>
+        </div>
+        <div class="related-item">
+          <span>PSLF in 2026: What Attending Physicians Need to Recalculate Right Now</span>
+          <span class="related-coming">Coming soon</span>
+        </div>
+        <div class="related-item">
+          <span>The Physician&rsquo;s Guide to Disability Insurance (Own-Occupation vs. Any-Occupation)</span>
+          <span class="related-coming">Coming soon</span>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<!-- ── AUTHOR BIO STRIP ───────────────────────────────────────── -->
+<div class="author-bio-strip">
+  <div class="wrap">
+    <div class="author-bio-in reveal">
+      <div class="author-bio-avatar">LV</div>
+      <div class="author-bio-content">
+        <div class="author-bio-label">About the author</div>
+        <div class="author-bio-name">LongView Planning Partners</div>
+        <div class="author-bio-text">LongView Planning Partners is a fee-only, fiduciary financial planning firm serving physicians and dentists exclusively. We work with clients at every career stage &mdash; from residency through retirement &mdash; on insurance analysis, student loans, tax strategy, investment management, and comprehensive financial planning. We earn no commissions, ever.</div>
+        <div class="author-bio-cred">Fee-Only &nbsp;&middot;&nbsp; Fiduciary &nbsp;&middot;&nbsp; NAPFA Member &nbsp;&middot;&nbsp; SEC Registered &nbsp;&middot;&nbsp; Certified Student Loan Professionals (CSLP&reg;) on staff</div>
+        <a class="bio-cta" href="longview_book.html">Schedule an Icebreaker Call &rarr;</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── RELATED ARTICLES ───────────────────────────────────────── -->
+<div class="related-section">
+  <div class="wrap reveal">
+    <div class="section-eyebrow">You might also like</div>
+    <div class="related-grid">
+      <div class="related-card">
+        <svg class="related-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <div class="related-badge">Early Career</div>
+        <div class="related-card-title">Your First Year as an Attending: The 5 Financial Decisions That Will Cost You the Most</div>
+        <div class="related-card-cat">Coming soon</div>
+      </div>
+      <div class="related-card">
+        <svg class="related-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <div class="related-badge">Student Loans</div>
+        <div class="related-card-title">PSLF in 2026: What Attending Physicians Need to Recalculate Right Now</div>
+        <div class="related-card-cat">Coming soon</div>
+      </div>
+      <div class="related-card">
+        <svg class="related-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <div class="related-badge">Insurance</div>
+        <div class="related-card-title">The Physician&rsquo;s Guide to Disability Insurance (Own-Occupation vs. Any-Occupation)</div>
+        <div class="related-card-cat">Coming soon</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ARTICLE CTA STRIP ──────────────────────────────────────── -->
+<div class="art-cta-strip">
+  <div class="wrap art-cta-in reveal">
+    <div class="art-cta-headline">Talk to a fee-only advisor who earns nothing from your insurance decisions.</div>
+    <p class="art-cta-sub">No commissions. No products. No agenda other than your outcome. 20-minute call, no pitch.</p>
+    <a class="btn-primary" href="longview_book.html">Schedule an Icebreaker Call &rarr;</a>
+  </div>
+</div>
+
+<!-- ── FOOTER PRE-BAR ─────────────────────────────────────────── -->
+<div class="footer-pre">
+  <div class="wrap">
+    <div class="footer-pre-copy">618 Oakleaf Office Lane, Suite 300 &nbsp;&middot;&nbsp; Memphis, TN 38117</div>
+    <div class="footer-pre-contact">
+      <a href="tel:9013229114">901-322-9114</a>
+      <span style="width:1px;height:14px;background:rgba(255,255,255,.15);display:inline-block"></span>
+      <a href="mailto:info@longviewplan.com">info@longviewplan.com</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────── -->
+<div class="footer-out">
+  <div class="wrap">
+    <div>
+      <div class="footer-logo-name">LongView</div>
+      <span class="footer-logo-sub">Planning Partners</span>
+    </div>
+    <div class="footer-links">
+      <a href="longview_licensing.html">Licensing</a>
+        <a href="https://brokercheck.finra.org" target="_blank" rel="noopener">FINRA BrokerCheck</a>
+        <a href="#">ADV Part 2 [LINK]</a>
+        <a href="#">Privacy Policy</a>
+      <a href="#">Disclosures</a>
+      <a href="#">Form ADV</a>
+      <a href="#">LinkedIn</a>
+    </div>
+    <div class="footer-disc">
+      LongView Planning Partners is an SEC-registered investment adviser. This website is for informational purposes only and does not constitute investment advice. Past performance is not indicative of future results.
+      <span style="display:block;margin-top:4px;font-size:10px;color:#333">[COMPLIANCE PLACEHOLDER &mdash; full ADV disclosure link]</span>
+      &copy; 2026 LongView Planning Partners.
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function(){
+    nav.classList.toggle('scrolled', window.scrollY > 24);
+  }, {passive:true});
+
+  var targets = document.querySelectorAll('.reveal');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+  },{threshold:0.01,rootMargin:'0px 0px -20px 0px'});
+  targets.forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
