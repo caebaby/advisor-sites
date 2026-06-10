@@ -1,7 +1,7 @@
 # LongView Planning Partners — Replit Transition Guide
 **For:** Johnny (developer)  
 **From:** Chris Evans  
-**Repo:** `github.com/caebaby/shared-work` → folder `Longview/Website/`  
+**Repo:** `github.com/caebaby/advisor-sites` → folder `longview/`  
 **Date:** May 2026
 
 ---
@@ -41,8 +41,8 @@ These are absolute. Break any of these and the site breaks visually or functiona
 ## 1. Quick Start — GitHub → Replit
 
 1. In Replit: **Create Repl → Import from GitHub**
-2. Paste: `https://github.com/caebaby/shared-work`
-3. Set the root directory to `Longview/Website/`
+2. Paste: `https://github.com/caebaby/advisor-sites`
+3. Set the root directory to `longview/`
 4. **The `.replit` file is already configured** — just hit Run. No manual setup needed.
 5. Entry point: `index.html` auto-redirects to the homepage.
 
